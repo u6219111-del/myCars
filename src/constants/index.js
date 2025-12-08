@@ -1,0 +1,6 @@
+export const BASE_URL ="https://xrnmfetzjpkzsispwtob.supabase.co"
+
+export const API_KEY ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhybm1mZXR6anBrenNpc3B3dG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIzNjMwMzYsImV4cCI6MjA3NzkzOTAzNn0.ItLNKHu0DuuwdCnz0XbLDxIv6LQleXRdP5EiH34Hg5w"    
+
+
+

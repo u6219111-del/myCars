@@ -1,0 +1,29 @@
+.tt h2 {
+  margin-top: 30px;
+  padding-bottom: 70px;
+}
+
+.tl{
+    margin-left: 100px;
+    margin-top: -10px;
+}
+.video-wrapper {
+  display: flex;               
+  justify-content: center;     
+  align-items: center;         
+  width: 100%;
+  margin-top: 40px;            
+}
+
+.video-frame {
+  width: 100%;                 
+  max-width: 1200px;           
+  height: 500px;              
+  border: none;               
+  border-radius: 20px;         
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 90px;
+}
+
