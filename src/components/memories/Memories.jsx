@@ -1,47 +1,50 @@
 import React from "react";
-import "./Memories.css"; 
+import "./Memories.css";
+import { useTranslation } from 'react-i18next';
 
 const Memories = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="memories-section">
-  
+
       <div className="memories-text">
         <h2 className="memories-title">
-          Unlock unforgettable memories on the road
+          {t('unlock_unforgettable_memories')}
         </h2>
         <p className="memories-description">
-          Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor tristique et gravida. Quis nunc interdum gravida ullamcorper
+          {t('memories_description')}
         </p>
 
         <div className="memories-grid">
           <div className="memories-item">
             <div className="memories-check"><img src="/src/assets/svg/succesfuly.svg" alt="" /></div>
             <p className="memories-item-text">
-              Velit semper morbi. Purus non eu cursus porttitor tristique et gravida...
+              {t('memories_item1')}
             </p>
           </div>
           <div className="memories-item">
             <div className="memories-check"><img src="/src/assets/svg/succesfuly.svg" alt="" /></div>
             <p className="memories-item-text">
-              Purus non eu cursus porttitor tristique et gravida. Quis nunc interdum
+              {t('memories_item2')}
             </p>
           </div>
           <div className="memories-item">
             <div className="memories-check"><img src="/src/assets/svg/succesfuly.svg" alt="" /></div>
             <p className="memories-item-text">
-              Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
+              {t('memories_item3')}
             </p>
           </div>
           <div className="memories-item">
             <div className="memories-check"><img src="/src/assets/svg/succesfuly.svg" alt="" /></div>
             <p className="memories-item-text">
-              Quis nunc interdum gravida ullamcorper
+              {t('memories_item4')}
             </p>
           </div>
         </div>
       </div>
 
-      
+
 
       <div className="memories-image-wrapper">
         <img

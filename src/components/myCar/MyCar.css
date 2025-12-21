@@ -1,0 +1,209 @@
+.cars-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.cars-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.cars-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #020617;
+}
+
+.cars-link {
+  font-size: 16px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.cars-link:hover {
+  text-decoration: underline;
+}
+
+.cars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.car-card {
+  width: 380px;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+}
+
+.car-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.car-body {
+  padding: 18px;
+}
+
+.car-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.car-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #020617;
+}
+
+.car-category {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.car-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.car-specs {
+  display: flex;
+  gap: 18px;
+  margin: 18px 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.car-specs span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.car-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.car-btn:hover {
+  opacity: 0.95;
+}
+
+/* Адаптивка для секции с машинами */
+
+/* Планшеты (<=1024px) */
+@media (max-width: 1024px) {
+  .cars-list {
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .car-card {
+    width: 45%;
+  }
+}
+
+/* Малые планшеты / большие смартфоны (<=768px) */
+@media (max-width: 768px) {
+  .cars-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cars-title {
+    font-size: 28px;
+  }
+
+  .cars-link {
+    font-size: 14px;
+  }
+
+  .cars-list {
+    gap: 16px;
+  }
+
+  .car-card {
+    width: 100%;
+  }
+
+  .car-image img {
+    height: 200px;
+  }
+
+  .car-body {
+    padding: 12px;
+  }
+
+  .car-name {
+    font-size: 18px;
+  }
+
+  .car-category {
+    font-size: 13px;
+  }
+
+  .car-price {
+    font-size: 16px;
+  }
+
+  .car-specs {
+    font-size: 13px;
+    gap: 12px;
+  }
+
+  .car-btn {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* Мобильные устройства (<=480px) */
+@media (max-width: 480px) {
+  .cars-section {
+    padding: 40px 15px;
+  }
+
+  .cars-title {
+    font-size: 24px;
+  }
+
+  .cars-link {
+    font-size: 13px;
+  }
+
+  .car-image img {
+    height: 180px;
+  }
+
+  .car-body {
+    padding: 10px;
+  }
+
+  .car-specs {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

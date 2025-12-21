@@ -1,17 +1,24 @@
 @import "tailwindcss";
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    font-family: "Inter", sans-serif;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  color: #111827;
+  width: 100%;
 }
-.app-container{
-    max-width: 1320px;
+
+.app-container {
+  max-width: 1350px;
   margin: 0 auto;
 }
-.umcha{
+.umcha {
   margin-left: 22px;
 }
 .u button {
@@ -23,6 +30,7 @@ body{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #4f46e5;
 }
 
 .u button:hover {
@@ -30,37 +38,36 @@ body{
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
-.e{
+.e {
   margin-top: 50px;
 }
 .mu {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.br{
+.br {
   margin-top: 50px;
   margin-bottom: 20px;
 }
-.my{
+.my {
   margin-top: 40px;
 }
-.mi{
-  padding-top: 80px;
+.mi {
 }
-.tp{
+.tp {
   margin-top: 20px;
 }
-.cr{
+.cr {
   margin-top: 30px;
 }
-.y{
-    background-color: #f9f9f9;
-   transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    padding: 24px 27px;
+.y {
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 24px 27px;
 }
-.y:hover{
-    background-color: #ffffff;
+.y:hover {
+  background-color: #ffffff;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
@@ -70,28 +77,28 @@ body{
 .y p {
   padding-top: 8px;
 }
-.p{
+.p {
   padding: 10px 0px;
 }
-.mir{
+.mir {
   margin-top: 70px;
 }
-.umkas{
+.umkas {
   margin-left: 60px;
 }
 
-.tkt{
+.tkt {
   margin-top: -197px;
 }
-.btn-1{
+.btn-1 {
   margin-top: 20px;
 }
-.btn-2{
+.btn-2 {
   margin-top: 20px;
 }
-.bata{
+.bata {
   margin-top: 80px;
 }
-.p-1{
+.p-1 {
   margin-top: 40px;
 }

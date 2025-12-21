@@ -1,20 +1,22 @@
 import React from 'react'
 import "./Customy.css"
+import { useTranslation } from 'react-i18next';
+
 function Customy() {
+  const { t } = useTranslation();
+  
   return (
 
         <section className="reviews-section">
-      <h2 className="reviews-title">Reviews from our customers</h2>
-
+          <h2 className="reviews-title">{t('reviews_from_customers')}</h2>
       <div className="reviews-grid">
-        
+
 
         <div className="review-card">
           <div className="review-top">
             <span className="quote">"</span>
             <p className="review-text">
-              Et aliquet netus at sapien pellentesque mollis nec dignissim
-              maecenas. Amet erat volutpat quisque odio purus feugiat. In gravida neque
+              {t('review1_text')}
             </p>
           </div>
 
@@ -29,13 +31,12 @@ function Customy() {
           </div>
         </div>
 
-      
+
         <div className="review-card">
           <div className="review-top">
             <span className="quote">"</span>
             <p className="review-text">
-              Purus consectetur varius quis urna phasellus enim mattis. Sem
-              tincidunt tortor nunc egestas amet adipiscing ligula
+              {t('review2_text')}
             </p>
           </div>
 
@@ -50,14 +51,12 @@ function Customy() {
           </div>
         </div>
 
- 
+
         <div className="review-card">
           <div className="review-top">
             <span className="quote">"</span>
             <p className="review-text">
-              Quam neque odio urna euismod felis. Sit egestas magna in quisque
-              famesdapibus quis sapien magna. Nisl non eget sit pellentesque
-              tristique et
+              {t('review3_text')}
             </p>
           </div>
 

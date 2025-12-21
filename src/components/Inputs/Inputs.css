@@ -1,0 +1,94 @@
+.inputs-container {
+  background-color: #5937e0;
+  color: #fff;
+  padding: 40px 30px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.inputs-title {
+  font-size: 3rem; 
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.inputs-desc {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 550px;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+
+.inputs-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fff;
+  border-radius: 17px;
+  padding: 8px;
+  max-width: 480px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: black;
+}
+
+.inputs-input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.inputs-button {
+  background-color: #ff9e0c;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.inputs-button:hover {
+  background-color: #e68a00;
+  transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .inputs-container {
+    padding: 30px 20px;
+  }
+
+  .inputs-title {
+    font-size: 2.2rem;
+  }
+
+  .inputs-desc {
+    font-size: 14px;
+  }
+
+  .inputs-search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inputs-input {
+    width: 100%;
+  }
+
+  .inputs-button {
+    width: 100%;
+  }
+}

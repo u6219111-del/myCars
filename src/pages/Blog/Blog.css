@@ -1,0 +1,149 @@
+.blog-container {
+  background-color: #f9fafb;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+.blog-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blog-header h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.blog-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Blog Card */
+.blog-card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blog-category {
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.blog-excerpt {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.blog-author {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #d1d5db;
+  color: #111827;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-right: 0.75rem;
+}
+
+.author-info .author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.author-info .author-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* CTA Button */
+.blog-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.blog-cta button {
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.blog-cta button:hover {
+  background-color: #4338ca;
+}
+
+/* Keyframes for fade-in + slide-up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

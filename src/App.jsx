@@ -1,16 +1,20 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Vehicles from "./pages/Vehicles";
-import Details from "./pages/Details";
-
+import { RouterProvider } from "react-router-dom";
+import { myRouter } from "./router";
+import { AuthProvider } from "./contexts/AuthContext";
+import { CartProvider } from "./contexts/CartContext";
+import { FavoritesProvider } from "./contexts/FavoritesContext";
+import "./index.css";
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/vehicles" />} /> 
-        <Route path="/vehicles" element={<Vehicles />} />
-        <Route path="/car/:id" element={<Details />} />    
-      </Routes>
-    </Router>
+    <div className="app-container">
+    <AuthProvider>
+      <CartProvider>
+        <FavoritesProvider>
+          <RouterProvider router={myRouter} />
+        </FavoritesProvider>
+      </CartProvider>
+    </AuthProvider>
+    </div>
   );
 }
 

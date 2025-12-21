@@ -1,0 +1,158 @@
+.phone-container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #5937E0;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 20px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* для адаптивки */
+  box-sizing: border-box;
+}
+
+.phone-image {
+  width: 267px;
+  height: 540px;
+  object-fit: contain;
+}
+
+.phone-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.phone-content h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.phone-content h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.phone-content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.83);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.phone-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 170px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+}
+
+.btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-apple {
+  background-color: white;
+  color: black;
+}
+
+.btn-google {
+  background-color: white;
+  color: black;
+}
+
+/* Адаптивка */
+@media (max-width: 1024px) {
+  .phone-container {
+    gap: 50px;
+  }
+
+  .phone-content h1 {
+    font-size: 40px;
+  }
+
+  .phone-content p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .phone-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 30px;
+  }
+
+  .phone-image {
+    width: 200px;
+    height: 400px;
+  }
+
+  .phone-content h1 {
+    font-size: 32px;
+  }
+
+  .phone-content h4 {
+    font-size: 14px;
+  }
+
+  .phone-content p {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 150px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .btn img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-content h1 {
+    font-size: 26px;
+  }
+
+  .phone-content p {
+    font-size: 13px;
+  }
+
+  .btn {
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .phone-image {
+    width: 150px;
+    height: 300px;
+  }
+}
