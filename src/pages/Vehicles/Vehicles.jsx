@@ -31,16 +31,15 @@ function Vehicles() {
 
   const handleAddToCart = (car) => {
     addToCart(car);
-    // Show a confirmation message
-    alert(`${car.name} added to cart!`);
+    
   };
 
   const handleToggleFavorite = (car) => {
     if (isFavorite(car.id)) {
-      alert(`${car.name} is already in favorites!`);
+     
     } else {
       addToFavorites(car);
-      alert(`${car.name} added to favorites!`);
+
     }
   };
 
