@@ -18,6 +18,7 @@ function Small() {
         <p>{t('comfort_desc')}</p>
       </div>
       <div className="small-item">
+        фдлотдфвм
         <img src="/src/assets/svg/save.svg" alt="savings" />
         <h2>{t('savings')}</h2>
         <p>{t('savings_desc')}</p>
