@@ -1,6 +1,6 @@
 .favorites-container {
   min-height: 100vh;
-  background-color: #f9fafb;
+
   padding: 2rem 0;
 }
 
@@ -14,10 +14,10 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  color: #111827;
+
 }
 
-/* Empty Favorites */
+
 .empty-favorites {
   text-align: center;
   padding: 3rem 0;
@@ -26,7 +26,7 @@
 .empty-favorites-icon {
   height: 3rem;
   width: 3rem;
-  color: #9ca3af;
+
   margin: 0 auto;
 }
 
@@ -34,12 +34,12 @@
   margin-top: 0.5rem;
   font-size: 1.25rem;
   font-weight: 500;
-  color: #111827;
+
 }
 
 .empty-favorites-text {
   margin-top: 0.25rem;
-  color: #6b7280;
+
 }
 
 .browse-btn-container {
@@ -60,9 +60,9 @@
   background-color: #4338ca;
 }
 
-/* Favorites Items */
+
 .favorites-items-container {
-  background-color: #fff;
+
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -112,17 +112,15 @@
 .favorites-item-name {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #111827;
+
 }
 
-.favorites-item-category {
-  color: #6b7280;
-}
+
 
 .favorites-item-price {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #111827;
+
 }
 
 .favorites-item-actions {
@@ -151,7 +149,6 @@
   height: 1.25rem;
 }
 
-/* Summary */
 .favorites-summary {
   border-top: 1px solid #e5e7eb;
   padding: 1rem 1.5rem;

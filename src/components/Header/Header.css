@@ -27,7 +27,7 @@
 .header-title {
   font-size: 16px;
   font-weight: bold;
-  color: #111827;
+
 }
 
 .header-nav {
@@ -35,6 +35,14 @@
   display: flex;
   justify-content: center;
 }
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
 
 .nav-list {
   display: flex;
@@ -48,7 +56,7 @@
 
 .nav-list li a {
   text-decoration: none;
-  color: #374151;
+
 }
 .nav-list li a:hover {
   color: #4f46e5;

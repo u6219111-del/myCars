@@ -14,10 +14,10 @@ function ContactUs() {
 
     emailjs
       .sendForm(
-        "service_hucnwce",       // Твой Service ID
-        "template_eihhfm5",      // Твой Template ID
+        "service_hucnwce",     
+        "template_eihhfm5",      
         form.current,
-        "_bZTv6mun39hIdXqL"      // Твой Public Key
+        "_bZTv6mun39hIdXqL"    
       )
       .then(
         (result) => {

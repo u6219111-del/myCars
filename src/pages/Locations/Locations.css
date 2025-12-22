@@ -1,7 +1,7 @@
 
 .locations-section {
   min-height: 100vh;
-  background-color: #f9fafb;
+
   padding: 3rem 1rem;
   font-family: 'Inter', sans-serif;
 }
@@ -20,13 +20,13 @@
 .locations-title {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #111827;
+
 }
 
 .locations-subtitle {
   margin-top: 0.75rem;
   font-size: 1.125rem;
-  color: #6b7280;
+
 }
 
 
@@ -43,7 +43,7 @@
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-  background-color: #fff;
+
 
 
   opacity: 0;
@@ -104,7 +104,7 @@
 .location-name {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111827;
+
   margin-bottom: 1rem;
 }
 
@@ -119,7 +119,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  color: #6b7280;
+
 }
 
 .location-detail .icon {
@@ -137,7 +137,7 @@
   width: 100%;
   padding: 0.5rem 1rem;
   background-color: #4f46e5;
-  color: #fff;
+
   font-weight: 500;
   border: none;
   border-radius: 0.375rem;
@@ -153,7 +153,7 @@
 
 .locations-footer {
   margin-top: 4rem;
-  background-color: #fff;
+
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -162,7 +162,7 @@
 .footer-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #111827;
+
   margin-bottom: 0.75rem;
 }
 
@@ -173,7 +173,7 @@
 }
 
 .footer-description {
-  color: #6b7280;
+ 
   font-size: 0.875rem;
 }
 
@@ -181,7 +181,7 @@
   align-self: flex-start;
   padding: 0.5rem 1rem;
   background-color: #4f46e5;
-  color: #fff;
+
   font-weight: 500;
   border: none;
   border-radius: 0.375rem;

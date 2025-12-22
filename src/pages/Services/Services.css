@@ -12,7 +12,6 @@
 
 .services-container {
   min-height: 100vh;
-  background-color: #f9fafb;
   padding: 3rem 0;
 }
 
@@ -29,13 +28,13 @@
 .services-header h1 {
   font-size: 2rem;
   font-weight: 800;
-  color: #111827;
+
   margin-bottom: 0.75rem;
 }
 
 .services-header p {
   font-size: 1.125rem;
-  color: #6b7280;
+
 }
 
 .services-grid {
@@ -58,7 +57,7 @@
 }
 
 .service-card {
-  background-color: white;
+
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
@@ -101,7 +100,7 @@
   text-align: center;
   font-size: 1.125rem;
   font-weight: 500;
-  color: #111827;
+
   transition: color 0.3s ease;
 }
 
@@ -112,12 +111,12 @@
 .service-card p {
   margin-top: 0.5rem;
   text-align: center;
-  color: #6b7280;
+
 }
 
 .why-choose {
   margin-top: 4rem;
-  background-color: white;
+
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -130,7 +129,7 @@
 .why-choose-inner h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+
 }
 
 .why-choose-grid {
@@ -181,7 +180,7 @@
 
 .why-item p {
   margin-top: 0.5rem;
-  color: #6b7280;
+
   transition: color 0.3s ease;
 }
 

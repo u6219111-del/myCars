@@ -25,13 +25,9 @@
 .stat-title {
   font-size: 20px;
   font-weight: 700;
-  color: #000000;
   margin: 0;
 }
 
-/* Адаптивка */
-
-/* Планшеты */
 @media (max-width: 1024px) {
   .stat-number {
     font-size: 60px;
@@ -42,7 +38,6 @@
   }
 }
 
-/* Средние мобильные / большие смартфоны */
 @media (max-width: 768px) {
   .stats-section {
     flex-direction: column;
@@ -58,7 +53,7 @@
   }
 }
 
-/* Малые мобильные */
+
 @media (max-width: 480px) {
   .stat-number {
     font-size: 40px;

@@ -1,7 +1,6 @@
 
 .contact-us {
   min-height: 100vh;
-  background-color: #f9fafb;
   padding: 3rem 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -20,18 +19,18 @@
 .headerr h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #111827;
+
 }
 
 .headerr p {
   margin-top: 1rem;
   font-size: 1.125rem;
-  color: #6b7280;
+
 }
 
-/* Карточка контактов */
+
 .contact-card {
-  background-color: #ffffff;
+
   border-radius: 12px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -49,34 +48,34 @@
   }
 }
 
-/* Информация о контактах */
+
 .contact-info h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #111827;
+
   margin-bottom: 0.5rem;
 }
 
 .contact-info p {
-  color: #6b7280;
+  
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
 }
 
 .info-list dt {
   font-weight: 500;
-  color: #6b7280;
+
   font-size: 0.875rem;
 }
 
 .info-list dd {
   margin-top: 0.25rem;
   margin-bottom: 1rem;
-  color: #111827;
+
   font-size: 0.95rem;
 }
 
-/* Форма */
+
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -88,7 +87,7 @@
   flex-direction: column;
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+
 }
 
 .contact-form input,
@@ -108,13 +107,13 @@
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
 }
 
-/* Кнопка */
+
 .contact-form button {
   margin-top: 1rem;
   padding: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+
   background-color: #6366f1;
   border: none;
   border-radius: 8px;

@@ -4,6 +4,63 @@
   --light-gray: #f3f4f6;
   --border-radius: 0.5rem;
 }
+/* ===== АНИМАЦИИ (БЕЗ ИЗМЕНЕНИЯ СТИЛЕЙ) ===== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* классы-анимации */
+.animate-hero {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-text {
+  opacity: 0;
+  animation: fadeRight 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-buttons {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.animate-image {
+  opacity: 0;
+  animation: fadeLeft 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
 
 .hero-section {
   background: linear-gradient(to right, var(--primary), var(--primary-dark));

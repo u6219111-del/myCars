@@ -1,7 +1,7 @@
 
 .details-container {
   padding: 50px 20px;
-  background-color: #f9fafb;
+
   font-family: 'Inter', sans-serif;
 }
 
@@ -61,24 +61,24 @@
 .details-info h1 {
   font-size: 50px;
   font-weight: bold;
-  color: #111827;
+
 }
 .details-meta {
   display: flex;
   gap: 15px;
   font-size: 18px;
-  color: #6b7280;
+
   margin-top: 10px;
 }
 .details-desc h3 {
   font-size: 24px;
   font-weight: 600;
-  color: #111827;
+
   margin-top: 30px;
 }
 .details-desc p {
   font-size: 16px;
-  color: #6b7280;
+
   margin-top: 10px;
 }
 
@@ -92,11 +92,11 @@
 .details-price span:first-child {
   font-size: 28px;
   font-weight: bold;
-  color: #111827;
+
 }
 .details-price span:last-child {
   font-size: 16px;
-  color: #6b7280;
+
 }
 
 
@@ -108,7 +108,7 @@
 }
 .details-specs > div {
   width: 180px;
-  background-color: #fff;
+
   border-radius: 12px;
   padding: 15px;
   text-align: center;
@@ -131,13 +131,10 @@
 }
 .details-specs p {
   font-weight: 600;
-  color: #111827;
-}
-.details-specs span {
-  color: #6b7280;
+
 }
 
-/* Действия */
+
 .details-actions {
   display: flex;
   gap: 20px;
@@ -170,7 +167,7 @@
   background-color: #d1d5db;
 }
 
-/* Other Cars */
+
 .other-cars-section {
   margin-top: 60px;
 }
@@ -183,7 +180,7 @@
 .other-cars-header h2 {
   font-size: 36px;
   font-weight: bold;
-  color: #111827;
+
 }
 .other-cars-header a {
   color: #6b7280;
@@ -201,7 +198,7 @@
 }
 .other-car-card {
   width: 380px;
-  background-color: #fff;
+
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
@@ -229,11 +226,11 @@
 .card-info h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #111827;
+
 }
 .card-info span {
   display: block;
-  color: #6b7280;
+
   margin-top: 5px;
 }
 .card-specs {
@@ -241,7 +238,7 @@
   justify-content: space-between;
   margin-top: 10px;
   font-size: 14px;
-  color: #6b7280;
+
 }
 .card-actions {
   display: flex;
@@ -270,7 +267,7 @@
   background-color: #d1d5db;
 }
 
-/* Анимация появления */
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -282,7 +279,6 @@
   }
 }
 
-/* Адаптивка */
 @media (max-width: 1024px) {
   .details-main {
     flex-direction: column;

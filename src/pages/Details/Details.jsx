@@ -83,7 +83,7 @@ function Details() {
             </div>
           </div>
           <div className="details-actions">
-            <button onClick={() => { addToCart(car); alert(`${car.name} added to cart!`); }}>Add to Cart</button>
+            <button onClick={() => { addToCart(car);  }}>Add to Cart</button>
             <button onClick={() => isFavorite(car.id) ? alert(`${car.name} is already in favorites!`) : addToFavorites(car)}
               className={isFavorite(car.id) ? 'active' : ''}
             >
