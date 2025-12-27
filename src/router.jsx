@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext"; // твой контекст
 import Layout from "./layout/Layout";
 import Home from "./pages/Home/Home";
 import Vehicles from "./pages/Vehicles/Vehicles";
@@ -15,11 +16,17 @@ import FAQ from "./pages/Faq/FAQ";
 import Blog from "./pages/Blog/Blog";
 import Locations from "./pages/Locations/Locations";
 import CheckoutSuccess from "./pages/CheckoutSucces/CheckoutSuccess";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import UserAccount from "./pages/UserAccount/UserAccount";
 
 export const myRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <AuthProvider>
+        <Layout />
+      </AuthProvider>
+    ),
     children: [
       { index: true, element: <Home /> },
       { path: "details", element: <Details /> },
@@ -37,6 +44,8 @@ export const myRouter = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "locations", element: <Locations /> },
       { path: "checkout-success", element: <CheckoutSuccess /> },
+      { path: "admin", element: <AdminPanel /> },
+      { path: "my-account", element: <UserAccount /> },
     ],
   },
 ]);

@@ -1,0 +1,331 @@
+.gallery-container {
+  padding: 3rem 2rem;
+  background: var(--card-bg);
+  margin: 2rem 0;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-container:hover::before {
+  opacity: 1;
+}
+
+.gallery-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.gallery-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: var(--transition);
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery-filter-btn {
+  padding: 0.7rem 1.5rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gallery-filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  z-index: -1;
+  transition: var(--transition);
+  opacity: 0;
+}
+
+.gallery-filter-btn:hover::before,
+.gallery-filter-btn.active::before {
+  opacity: 1;
+}
+
+.gallery-filter-btn:hover,
+.gallery-filter-btn.active {
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.gallery-item-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+}
+
+.gallery-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-image img {
+  transform: scale(1.1);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  padding: 1rem;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-info {
+  text-align: center;
+  color: white;
+}
+
+.gallery-item-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: white;
+  transition: var(--transition);
+}
+
+.gallery-item-description {
+  font-size: 0.9rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  transition: var(--transition);
+}
+
+/* Modal styles */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.gallery-modal-content {
+  background: var(--card-bg);
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.8);
+  animation: scaleIn 0.3s ease forwards;
+  box-shadow: var(--card-shadow-hover);
+  border: 1px solid var(--border-color);
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.gallery-modal-close:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.gallery-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-modal-body img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.gallery-modal-info {
+  padding: 2rem;
+}
+
+.gallery-modal-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 1rem 0;
+  transition: var(--transition);
+}
+
+.gallery-modal-description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  transition: var(--transition);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    transition: var(--transition);
+  }
+  
+  .gallery-title {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-filters {
+    gap: 0.5rem;
+  }
+  
+  .gallery-filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .gallery-modal-body img {
+    height: 250px;
+  }
+  
+  .gallery-modal-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Focus rings for accessibility */
+.gallery-item:focus-visible,
+.gallery-filter-btn:focus-visible,
+.gallery-modal-close:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}

@@ -1,0 +1,58 @@
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+
+.user-name {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  min-width: 150px;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.user-dropdown-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.user-dropdown-item:hover {
+  background-color: var(--card-bg);
+  color: var(--primary);
+}

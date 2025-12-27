@@ -1,64 +1,37 @@
-:root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --input-border: #d1d5db;
-  --input-focus: #6366f1;
-  --bg-color: #f9fafb;
-  --error-bg: #fee2e2;
-  --error-color: #b91c1c;
-  --border-radius: 0.5rem;
-  --shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Анимация появления */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .register-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
   padding: 2rem;
+  background: var(--bg-color);
 }
 
 .register-card {
-  background-color: white;
-  border-radius: var(--border-radius);
+  background-color: var(--card-bg);
+  border-radius: 8px;
   box-shadow: var(--shadow);
   padding: 2.5rem;
   width: 100%;
-  max-width: 400px;
-  animation: fadeInUp 0.8s ease forwards;
+  max-width: 420px;
+  border: 1px solid var(--border-color);
 }
 
 .register-title {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.1s;
+  color: var(--text-color);
 }
 
 .register-error {
-  background-color: var(--error-bg);
-  color: var(--error-color);
-  padding: 0.75rem 1rem;
-  border-radius: var(--border-radius);
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 12px;
+  border-radius: 6px;
   margin-bottom: 1rem;
-  font-size: 0.9rem;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.2s;
+  font-size: 14px;
 }
 
 .register-form {
@@ -74,37 +47,36 @@
 }
 
 .register-input {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.95rem;
-  border: 1px solid var(--input-border);
-  border-radius: var(--border-radius);
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  background: var(--card-bg);
   outline: none;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease forwards;
+  transition: border-color 0.3s ease;
+  width: 100%;
 }
 
 .register-input:focus {
-  border-color: var(--input-focus);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  border-color: var(--primary);
 }
 
 .register-button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.3s;
+  transition: background-color 0.3s ease;
+  width: 100%;
 }
 
 .register-button:hover {
   background-color: var(--primary-hover);
-  transform: translateY(-2px);
 }
 
 .register-button:disabled {
@@ -114,15 +86,14 @@
 
 .register-login {
   text-align: center;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.4s;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
 .register-login-link {
-  color: var(--primary-color);
-  font-weight: 600;
+  color: var(--primary);
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.3s ease;
 }

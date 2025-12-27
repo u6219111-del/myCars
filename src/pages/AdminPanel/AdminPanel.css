@@ -1,0 +1,368 @@
+.admin-panel-container {
+  min-height: 100vh;
+  background: var(--bg-color);
+  padding: 2rem;
+}
+
+.admin-panel-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 0;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-sidebar {
+  background: var(--secondary);
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-nav button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-nav button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-nav button.active {
+  background: var(--primary);
+}
+
+.admin-content {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.admin-section-title {
+  font-size: 24px;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+}
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-stat-card h4 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.admin-stat-card p {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.admin-add-form {
+  background: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.admin-add-form h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.admin-add-form form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.admin-add-form input,
+.admin-add-form select {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.admin-add-form input:focus,
+.admin-add-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.admin-add-form button {
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-add-form button:hover {
+  background: var(--primary-hover);
+}
+
+.admin-cars-list,
+.admin-reviews-list,
+.admin-employees-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-car-item,
+.admin-review-item,
+.admin-employee-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-car-item img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.admin-car-info,
+.admin-review-info,
+.admin-employee-info {
+  flex: 1;
+}
+
+.admin-car-info h5,
+.admin-review-info h5,
+.admin-employee-info h5 {
+  margin: 0 0 8px 0;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.admin-car-info p,
+.admin-review-info p,
+.admin-employee-info p {
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.admin-approve-btn,
+.admin-delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-approve-btn {
+  background: var(--success);
+  color: white;
+}
+
+.admin-delete-btn {
+  background: var(--danger);
+  color: white;
+}
+
+.admin-approve-btn:hover {
+  background: #15803d;
+}
+
+.admin-delete-btn:hover {
+  background: #b91c1c;
+}
+
+.admin-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-user-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-user-info h5 {
+  margin: 0 0 8px 0;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.admin-user-info p {
+  margin: 4px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.admin-user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.role-select {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.admin-access-denied,
+.admin-login-required {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  min-height: 300px;
+}
+
+.admin-access-denied h2,
+.admin-login-required h2 {
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.admin-access-denied p,
+.admin-login-required p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .admin-panel-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-sidebar {
+    padding: 1rem;
+  }
+  
+  .admin-content {
+    padding: 1rem;
+  }
+  
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-add-form form {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-car-item,
+  .admin-review-item,
+  .admin-employee-item,
+  .admin-user-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .admin-car-item img {
+    justify-self: center;
+  }
+}

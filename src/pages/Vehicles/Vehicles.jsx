@@ -1,9 +1,9 @@
-import { getCarss } from "../../api/allCars";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 import { useFavorites } from "../../contexts/FavoritesContext";
 import { useTranslation } from "react-i18next";
+import { getCarss } from "../../api/allCars";
 import "./Vehicles.css";
 
 function Vehicles() {
@@ -17,7 +17,7 @@ function Vehicles() {
   useEffect(() => {
     async function loadCars() {
       const data = await getCarss();
-      setCars(data);
+      setCars(data || []);
     }
     loadCars();
   }, []);
@@ -26,22 +26,10 @@ function Vehicles() {
     filter === "All Vehicles"
       ? cars
       : cars.filter(
-          (car) => car.category.toLowerCase() === filter.toLowerCase()
+          (car) =>
+            car.category &&
+            car.category.toLowerCase() === filter.toLowerCase()
         );
-
-  const handleAddToCart = (car) => {
-    addToCart(car);
-    
-  };
-
-  const handleToggleFavorite = (car) => {
-    if (isFavorite(car.id)) {
-     
-    } else {
-      addToFavorites(car);
-
-    }
-  };
 
   return (
     <div className="vehicles-page">
@@ -65,8 +53,10 @@ function Vehicles() {
               <img src={car.image_url} alt={car.name} />
 
               <button
-                className={`favorite-btn ${isFavorite(car.id) ? "active" : ""}`}
-                onClick={() => handleToggleFavorite(car)}
+                className={`favorite-btn ${
+                  isFavorite(car.id) ? "active" : ""
+                }`}
+                onClick={() => addToFavorites(car)}
               >
                 ♥
               </button>
@@ -83,17 +73,15 @@ function Vehicles() {
 
               <div className="vehicle-specs">
                 <div>
-                  <img src="/src/assets/svg/korobka.svg" alt="" />
-                  <span>{car.automat ? t("automatic") : t("manual")}</span>
-                </div>
-                <div>
-                  <img src="/src/assets/svg/gaz.svg" alt="" />
-                  <span>PB 95</span>
-                </div>
-                <div>
-                  <img src="/src/assets/svg/snow.svg" alt="" />
                   <span>
-                    {car.air_conditioner ? t("air_conditioner") : t("no_ac")}
+                    {car.automat ? t("automatic") : t("manual")}
+                  </span>
+                </div>
+                <div>
+                  <span>
+                    {car.air_conditioner
+                      ? t("air_conditioner")
+                      : t("no_ac")}
                   </span>
                 </div>
               </div>
@@ -101,7 +89,7 @@ function Vehicles() {
               <div className="vehicle-actions">
                 <button
                   className="btn-primary"
-                  onClick={() => handleAddToCart(car)}
+                  onClick={() => addToCart(car)}
                 >
                   {t("add_to_cart")}
                 </button>
@@ -116,8 +104,7 @@ function Vehicles() {
           </div>
         ))}
       </div>
-
-      <div className="brands">
+       <div className="brands">
         <a
           href="https://www.toyota-global.com/"
           target="_blank"
@@ -169,3 +156,5 @@ function Vehicles() {
 }
 
 export default Vehicles;
+
+

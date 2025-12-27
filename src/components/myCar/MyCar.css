@@ -2,6 +2,13 @@
   max-width: 1320px;
   margin: 0 auto;
   padding: 60px 20px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .cars-header {
@@ -14,12 +21,12 @@
 .cars-title {
   font-size: 32px;
   font-weight: 700;
-
+  color: var(--text-color);
 }
 
 .cars-link {
   font-size: 16px;
-  color: #2563eb;
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -35,12 +42,12 @@
 
 .car-card {
   width: 380px;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 24px;
   overflow: hidden;
-  border: 1px solid rgba(37, 99, 235, 0.12);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
 }
 
 .car-card:hover {
@@ -67,18 +74,18 @@
 .car-name {
   font-size: 20px;
   font-weight: 600;
-  color: #020617;
+  color: var(--text-color);
 }
 
 .car-category {
   font-size: 14px;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .car-price {
   font-size: 18px;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--primary);
 }
 
 .car-specs {
@@ -86,7 +93,7 @@
   gap: 18px;
   margin: 18px 0;
   font-size: 14px;
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .car-specs span {
@@ -99,12 +106,13 @@
   width: 100%;
   height: 44px;
   border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: #fff;
+  border: 1px solid var(--border-color);
+  background: var(--primary);
+  color: var(--text-light);
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .car-btn:hover {

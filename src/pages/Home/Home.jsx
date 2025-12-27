@@ -1,29 +1,28 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
-import Book from "../../components/Book/Book";
-import Small from "../../components/Small/Small";
-import Block from "../../components/Block/Block";
-import MyCar from "../../components/myCar/MyCar";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
+import SearchFilter from "../../components/SearchFilter/SearchFilter";
+import CarSlider from "../../components/CarSlider/CarSlider";
+import Features from "../../components/Features/Features";
 import Facts from "../../components/Facts/Facts";
-import Inputs from "../../components/Inputs/Inputs";
-import Add from "../Add/Add";
-import FAQ from "../Faq/FAQ";
-
-
+import PricingTable from "../../components/PricingTable/PricingTable";
+import TestimonialSlider from "../../components/TestimonialSlider/TestimonialSlider";
+import Partners from "../../components/Partners/Partners";
+import CTA from "../../components/CTA/CTA";
+import Newsletter from "../../components/Newsletter/Newsletter";
 
 function Home() {
-
-
   return (
-    <div className="flex flex-col items-center gap-[80px] pt-[20px]">
-      <Hero />
-      <Book />
-      <Small />
-      <Block />
-      <MyCar />
+    <div className="home-page">
+      <HeroBanner />
+      <SearchFilter />
+      <CarSlider />
+      <Features />
       <Facts />
-      <Add/>
-      <Inputs/>
+      <PricingTable />
+      <TestimonialSlider />
+      <Partners />
+      <CTA />
+      <Newsletter />
     </div>
   );
 }

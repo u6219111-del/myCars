@@ -3,35 +3,36 @@ import { useTranslation } from 'react-i18next';
 import './Locations.css';
 import { Link } from "react-router-dom";
 
+
 function Locations() {
   const { t } = useTranslation();
   
-  const locations = [
-    {
-      id: 1,
-      name: t('downtown_office'),
-      address: t('downtown_address'),
-      phone: "+1 (555) 123-4567",
-      hours: t('downtown_hours'),
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1308&q=80"
-    },
-    {
-      id: 2,
-      name: t('airport_terminal'),
-      address: t('airport_address'),
-      phone: "+1 (555) 234-5678",
-      hours: t('airport_hours'),
-      image: "https://assets.cntraveller.in/photos/688c6adbcf3944c198c2f002/4:3/w_2244,h_1683,c_limit/sfd2.jpg"
-    },
-    {
-      id: 3,
-      name: t('central_station'),
-      address: t('central_address'),
-      phone: "+1 (555) 345-6789",
-      hours: t('central_hours'),
-      image: "https://cms.goteborg.com/uploads/centralstationen-167-1-scaled.jpg"
-    }
-  ];
+const locations = [
+  {
+    id: 1,
+    name: t('bmw_center'),
+    address: t('bmw_address'),
+    phone: "+49 89 382 0",
+    hours: t('working_hours'),
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738"
+  },
+  {
+    id: 2,
+    name: t('mercedes_center'),
+    address: t('mercedes_address'),
+    phone: "+49 711 17 0",
+    hours: t('working_hours'),
+    image: "https://images.unsplash.com/photo-1549921296-3b4a4f1c56d6"
+  },
+  {
+    id: 3,
+    name: t('audi_center'),
+    address: t('audi_address'),
+    phone: "+49 841 89 0",
+    hours: t('working_hours'),
+    image: "https://images.unsplash.com/photo-1605559424843-9b8a3c0f8c6d"
+  }
+];
 
   return (
     <div className="locations-section">
@@ -91,6 +92,7 @@ function Locations() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

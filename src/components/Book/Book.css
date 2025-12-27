@@ -1,12 +1,5 @@
-:root {
-  --primary: #4f46e5;
-  --primary-dark: #3730a3; 
-  --light-gray: #f3f4f6;
-  --border-radius: 0.5rem;
-}
-
 .book-section {
-  background: linear-gradient(135deg, #5731d2, #3413bc);
+  background: var(--bg-gradient);
   width: 1220px;
   height: 660px;
   margin: 0 auto;
@@ -16,8 +9,9 @@
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
-  color: white;
+  color: var(--text-color);
   font-family: sans-serif;
+  transition: all 0.5s ease;
 }
 
 .book-bg {
@@ -53,33 +47,45 @@
   font-size: 60px;
   font-weight: bold;
   line-height: 1.1;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
 }
 
 .book-text p {
   font-size: 16px;
-  opacity: 0.85;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
 }
 .btn-primary {
   width: 204px;
   height: 45px;
-  background: #ffa62b;
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-color);
   font-weight: 600;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .book-form {
   width: 416px;
   height: 500px;
-  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  background: var(--card-gradient);
   border-radius: 24px;
   padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .book-form h2 {
@@ -93,7 +99,8 @@
   flex-direction: column;
   gap: 12px;
   margin-bottom: 10px;
-  color: black;
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 .book-form select,
@@ -101,38 +108,45 @@
   width: 336px;
   height: 38px;
   border-radius: 12px;
-  border: 1px solid #ccc;
+  border: 2px solid var(--border-color);
   padding: 0 10px;
   outline: none;
-  transition: 0.3s;
-  
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
 .book-form select:focus,
 .book-form input:focus {
-  border-color: #0e63c5;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
 .btn-book {
   width: 336px;
   height: 40px;
-  background: #ff9e0c;
-  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-color);
   font-weight: 600;
   border-radius: 12px;
   margin-top: 10px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-book:hover {
-  background: #ff8c00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
 }
 
 .book-success {
   font-size: 24px;
   font-weight: bold;
-  color: #80ff00e3;
+  color: var(--success);
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1280px) {

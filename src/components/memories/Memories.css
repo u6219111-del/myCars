@@ -8,6 +8,13 @@
   flex-wrap: wrap;
   align-items: flex-start;
   font-family: 'Inter', sans-serif;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .memories-text {
@@ -20,13 +27,13 @@
   font-weight: 800;
   margin-bottom: 24px;
   line-height: 1.2;
-
+  color: var(--text-color);
 }
 
 .memories-description {
   font-size: 18px;
   line-height: 1.6;
-
+  color: var(--text-muted);
   margin-bottom: 32px;
 }
 
@@ -42,10 +49,11 @@
   align-items: flex-start;
   gap: 12px;
   padding: 12px;
-  background: #f9f9fc;
+  background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .memories-item:hover {
@@ -54,8 +62,8 @@
 }
 
 .memories-check {
-  background: linear-gradient(135deg, #7c3aed, #5937e0);
-  color: #fff;
+  background: var(--primary);
+  color: var(--text-light);
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -68,7 +76,7 @@
 }
 
 .memories-item-text {
-  color: #1f1f1f;
+  color: var(--text-color);
   font-size: 16px;
   line-height: 1.5;
 }
