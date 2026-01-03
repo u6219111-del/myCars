@@ -1,11 +1,9 @@
 .partners-container {
   padding: 3rem 2rem;
-  background: var(--card-bg);
   margin: 2rem 0;
   position: relative;
   overflow: hidden;
   transition: var(--transition);
-  border: 1px solid var(--border-color);
 }
 
 .partners-container::before {
@@ -62,14 +60,12 @@
 }
 
 .partner-card {
-  background: var(--card-bg);
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;

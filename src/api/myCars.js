@@ -18,4 +18,4 @@ export const getCars = async () => {
   return cars;
 }
 
-getCars();
+// getCars(); // Comment out the immediate execution

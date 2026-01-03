@@ -1,7 +1,6 @@
 import React from "react";
 import HeroBanner from "../../components/HeroBanner/HeroBanner";
 import SearchFilter from "../../components/SearchFilter/SearchFilter";
-import CarSlider from "../../components/CarSlider/CarSlider";
 import Features from "../../components/Features/Features";
 import Facts from "../../components/Facts/Facts";
 import PricingTable from "../../components/PricingTable/PricingTable";
@@ -9,13 +8,14 @@ import TestimonialSlider from "../../components/TestimonialSlider/TestimonialSli
 import Partners from "../../components/Partners/Partners";
 import CTA from "../../components/CTA/CTA";
 import Newsletter from "../../components/Newsletter/Newsletter";
+import MyCar from "../../components/myCar/MyCar";
 
 function Home() {
   return (
     <div className="home-page">
       <HeroBanner />
       <SearchFilter />
-      <CarSlider />
+      <MyCar/>
       <Features />
       <Facts />
       <PricingTable />

@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 24px;
   height: 80px;
@@ -72,7 +72,7 @@
 
 .nav-list {
   display: flex;
-  gap: 25px;
+  gap: 15px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -176,8 +176,8 @@
 }
 
 .user-avatar {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-color);
@@ -300,59 +300,93 @@
 .burger-line.open:nth-child(3) {
   transform: rotate(-45deg) translateY(-7px);
 }
-
 @media (max-width: 768px) {
-  .header-container {
-    height: 70px;
+  .header {
+    backdrop-filter: blur(12px);
   }
 
+  .header-container {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  /* ---------- NAV ---------- */
   .header-nav {
     position: absolute;
-    top: 70px;
+    top: 64px;
     left: 0;
     width: 100%;
     background: var(--card-bg);
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+
     max-height: 0;
     overflow: hidden;
-    transition: var(--transition);
+
     box-shadow: var(--card-shadow);
     border-bottom: 1px solid var(--border-color);
-    border-radius: 0 0 12px 12px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
   .header-nav.open {
-    max-height: 400px;
-    padding-bottom: 16px;
+    max-height: 420px;
+    padding: 16px 0 20px;
   }
 
   .nav-list {
+    width: 100%;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 16px;
-    padding: 0 16px;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
   }
 
+  .nav-list li a {
+    font-size: 16px;
+  }
+
+  /* ---------- BURGER ---------- */
   .burger-btn {
     display: flex;
   }
 
+  /* ---------- RIGHT SIDE ---------- */
   .header-right {
-    margin-left: 8px;
-    gap: 8px;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .icon-link {
+    padding: 6px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ---------- USER / AUTH ---------- */
+  .user-name {
+    display: none; /* экономим место */
+  }
+
+  .user-info {
+    padding: 6px;
   }
 
   .auth-links {
+    display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 3px;
   }
 
   .login-btn,
   .register-btn {
-    width: 80px;
-    height: 36px;
-    font-size: 13px;
     padding: 6px 12px;
+    font-size: 13px;
+    height: 20px;
+    width: auto;
   }
 }

@@ -139,6 +139,9 @@ const resources = {
 
       // Login page
       sign_in: "Sign In",
+      login_success: "You have logged in successfully!",
+      logged_in_successfully: "You have logged in successfully!",
+      registration_success: "Registration successful!",
       email_address: "Email Address",
       password: "Password",
       remember_me: "Remember me",
@@ -154,6 +157,7 @@ const resources = {
 
       // Register page
       create_account: "Create Account",
+      register_success_msg: "Registration successful!",
       confirm_password: "Confirm Password",
       already_have_account: "Already have an account?",
       sign_in_link: "Sign in",
@@ -573,6 +577,9 @@ const resources = {
 
       // Login page
       sign_in: "Войти",
+      login_success: "Вы вошли в систему!",
+      logged_in_successfully: "Вы вошли в систему!",
+      registration_success: "Регистрация успешна!",
       email_address: "Адрес электронной почты",
       password: "Пароль",
       remember_me: "Запомнить меня",
@@ -588,6 +595,7 @@ const resources = {
 
       // Register page
       create_account: "Создать аккаунт",
+      register_success_msg: "Регистрация успешна!",
       confirm_password: "Подтвердите пароль",
       already_have_account: "Уже есть аккаунт?",
       sign_in_link: "Войти",
@@ -1031,6 +1039,9 @@ const resources = {
 
       // Login page
       sign_in: "Кирүү",
+      login_success: "Системага кирдиңиз!",
+      logged_in_successfully: "Системага кирдиңиз!",
+      registration_success: "Каттоо ийгиликтүү өттү!",
       email_address: "Электрондук почта дареги",
       password: "Сырсөз",
       remember_me: "Эсиңде сакта",
@@ -1046,6 +1057,7 @@ const resources = {
 
       // Register page
       create_account: "Аккаунт түзүү",
+      register_success_msg: "Каттоо ийгиликтүү өттү!",
       confirm_password: "Сырсөздү ырастаңыз",
       already_have_account: "Эчак аккаунтуңуз барбы?",
       sign_in_link: "Кирүү",

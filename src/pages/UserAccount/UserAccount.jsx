@@ -1,181 +1,121 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { useTranslation } from "react-i18next";
-import { supabase } from "../../api/supabaseClient";
-import { updateUserProfile } from "../../api/users";
-import "./UserAccount.css";
+import { getProfile, updateProfile } from "../../api/mockUsers";
 
-function UserAccount() {
-  const { currentUser } = useAuth();
-  const { t } = useTranslation();
-  const [userData, setUserData] = useState({
-    full_name: "",
-    email: "",
-    avatar_url: ""
-  });
-  const [editing, setEditing] = useState(false);
-  const [editData, setEditData] = useState({
-    full_name: "",
-    avatar_url: ""
-  });
+export default function UserAccount() {
+  const { user } = useAuth();
+  const [profile, setProfile] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
+
 
   useEffect(() => {
-    if (currentUser) {
-      setUserData({
-        full_name: currentUser.full_name || "",
-        email: currentUser.email || "",
-        avatar_url: currentUser.avatar_url || null
-      });
-      setEditData({
-        full_name: currentUser.full_name || "",
-        avatar_url: currentUser.avatar_url || ""
-      });
+    if (!user?.id) {
+      setProfile(null);
+      setLoading(false);
+      return;
     }
-  }, [currentUser]);
 
-  const handleEditToggle = () => {
-    setEditing(!editing);
-  };
+    const fetchProfile = async () => {
+      setLoading(true);
+      try {
+        const data = await getProfile(user.id);
+        setProfile(data);
+      } catch (err) {
+        console.error("Failed to load profile:", err);
+        setProfile(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEditData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+    fetchProfile();
+  }, [user]);
 
-  const handleSave = async (e) => {
-    e.preventDefault();
-    
+  if (!user) return <p>Пожалуйста, войдите в систему, чтобы просмотреть профиль.</p>;
+  if (loading) return <p>Загрузка профиля...</p>;
+
+  const handleUpdate = async () => {
+    if (!profile) return;
+    setUpdating(true);
     try {
-      // Update user profile in Supabase
-      const { error } = await updateUserProfile(currentUser.id, {
-        full_name: editData.full_name,
-        avatar_url: editData.avatar_url 
+      const updated = await updateProfile(user.id, {
+        username: profile.username,
+        avatar_url: profile.avatar_url,
       });
-
-      if (error) throw error;
-
-      // Update local state
-      setUserData({
-        ...userData,
-        full_name: editData.full_name,
-        avatar_url: editData.avatar_url
-      });
-      
-      // Update the auth context user data
-      // We'll need to refresh the user data by triggering a re-render
-      window.location.reload();
-      
-      setEditing(false);
-    } catch (error) {
-      console.error('Error updating profile:', error);
-      alert('Error updating profile: ' + error.message);
+      setProfile(updated);
+      alert("Профиль обновлён!");
+    } catch (err) {
+      alert("Ошибка при обновлении профиля: " + err.message);
+    } finally {
+      setUpdating(false);
     }
   };
-
-  if (!currentUser) {
-    return (
-      <div className="user-account-container">
-        <div className="user-account-wrapper">
-          <div className="user-account-login-required">
-            <h2>{t('please_login_to_view_account')}</h2>
-            <p>{t('login_to_access_your_account')}</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="user-account-container">
-      <div className="user-account-wrapper">
-        <h1>{t('my_account')}</h1>
-        
-        <div className="user-account-info">
-          <div className="user-avatar-section">
-            {userData.avatar_url && (
-              <img 
-                src={userData.avatar_url} 
-                alt={t('user_avatar')} 
-                className="user-account-avatar"
-              />
-            )}
-            <h2>{userData.full_name || userData.email}</h2>
+      <div className="profile-card">
+        <h2>Мой профиль</h2>
+        <div className="profile-info">
+          <div className="avatar-section">
+            <div className="avatar-wrapper">
+              {profile?.avatar_url ? (
+                <img
+                  src={profile.avatar_url}
+                  alt="avatar"
+                  className="avatar-img"
+                />
+              ) : (
+                <div className="avatar-placeholder">
+                  {profile?.username?.charAt(0)?.toUpperCase() || user?.email?.charAt(0)?.toUpperCase() || "U"}
+                </div>
+              )}
+            </div>
           </div>
           
-          <div className="user-details">
-            <div className="user-detail-item">
-              <label>{t('email')}:</label>
-              <span>{userData.email}</span>
+          <div className="profile-details">
+            <div className="profile-field">
+              <label>Имя пользователя:</label>
+              <input
+                type="text"
+                value={profile?.username || ""}
+                onChange={(e) =>
+                  setProfile({ ...profile, username: e.target.value })
+                }
+                className="profile-input"
+              />
             </div>
             
-            {editing ? (
-              <form onSubmit={handleSave} className="edit-profile-form">
-                <div className="form-group">
-                  <label htmlFor="full_name">{t('full_name')}:</label>
-                  <input
-                    type="text"
-                    id="full_name"
-                    name="full_name"
-                    value={editData.full_name}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="avatar_url">{t('avatar_url')}:</label>
-                  <input
-                    type="text"
-                    id="avatar_url"
-                    name="avatar_url"
-                    value={editData.avatar_url}
-                    onChange={handleInputChange}
-                    placeholder="https://example.com/avatar.jpg"
-                  />
-                </div>
-                
-                <div className="form-buttons">
-                  <button type="submit" className="save-btn">
-                    {t('save')}
-                  </button>
-                  <button type="button" onClick={handleEditToggle} className="cancel-btn">
-                    {t('cancel')}
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <div className="profile-display">
-                <div className="user-detail-item">
-                  <label>{t('full_name')}:</label>
-                  <span>{userData.full_name || t('not_provided')}</span>
-                </div>
-                
-                <div className="user-detail-item">
-                  <label>{t('role')}:</label>
-                  <span>{currentUser.role || 'User'}</span>
-                </div>
-                
-                <div className="user-detail-item">
-                  <label>{t('member_since')}:</label>
-                  <span>
-                    {currentUser.created_at 
-                      ? new Date(currentUser.created_at).toLocaleDateString() 
-                      : t('unknown')}
-                  </span>
-                </div>
-                
-                <button onClick={handleEditToggle} className="edit-profile-btn">
-                  {t('edit_profile')}
-                </button>
-              </div>
-            )}
+            <div className="profile-field">
+              <label>Email:</label>
+              <input
+                type="text"
+                className="profile-input profile-input-disabled"
+              />
+            </div>
+            
+            <div className="profile-field">
+              <label>Аватар URL:</label>
+              <input
+                type="text"
+                value={profile?.avatar_url || ""}
+                onChange={(e) =>
+                  setProfile({ ...profile, avatar_url: e.target.value })
+                }
+                className="profile-input"
+              />
+            </div>
+            
+            <button 
+              onClick={handleUpdate} 
+              disabled={updating}
+              className="update-btn"
+            >
+              {updating ? "Сохраняем..." : "Сохранить изменения"}
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default UserAccount;

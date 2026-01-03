@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import './Partners.css';
-function Partners() {
-  const { t } = useTranslation();
 
-  // Sample partners data
-  const partners = [
+function Partners() {
+  const { t, i18n } = useTranslation();
+
+  const partners = useMemo(() => [
     {
       id: 1,
       name: t('partner_1_name'),
@@ -33,7 +33,7 @@ function Partners() {
     {
       id: 5,
       name: t('partner_5_name'),
-      logo: '/src/assets/images/partner-5.png',
+      logo: '/src/assets/svg/partner-5.png',
       description: t('partner_5_description')
     },
     {
@@ -42,26 +42,25 @@ function Partners() {
       logo: '/src/assets/images/partner-6.png',
       description: t('partner_6_description')
     }
-  ];
+  ], [i18n.language]); // ← КЛЮЧЕВО
 
   return (
     <div className="partners-container">
       <div className="partners-wrapper">
         <h2 className="partners-title">{t('our_partners')}</h2>
         <p className="partners-subtitle">{t('partners_subtitle')}</p>
-        
+
         <div className="partners-grid">
-          {partners.map((partner) => (
+          {partners.map(partner => (
             <div key={partner.id} className="partner-card">
               <div className="partner-logo">
-                <img 
-                  src={partner.logo} 
+                <img
+                  src={partner.logo}
                   alt={partner.name}
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/150x80/3498db/ffffff?text=' + encodeURIComponent(partner.name);
-                  }}
+                  className="partner-logo-image"
                 />
               </div>
+
               <div className="partner-info">
                 <h3 className="partner-name">{partner.name}</h3>
                 <p className="partner-description">{partner.description}</p>
@@ -69,7 +68,7 @@ function Partners() {
             </div>
           ))}
         </div>
-        
+
         <div className="partners-cta">
           <button className="partners-cta-button">
             {t('become_partner')}

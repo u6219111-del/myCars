@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch db.json --port 3000"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@supabase/supabase-js": "^2.79.0",
     "@tailwindcss/vite": "^4.1.16",
+    "blueimp-md5": "^2.19.0",
     "crypto-js": "^4.2.0",
     "i18next": "^25.7.3",
     "react": "^19.1.1",

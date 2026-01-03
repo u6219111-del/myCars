@@ -111,7 +111,7 @@ const PricingTable = () => {
       
       <div className="pricing-footer">
         <p className="money-back">{t('money_back_guarantee', '30-Day Money-Back Guarantee')}</p>
-        <p className="need_help">{t('need_help', 'Need help choosing a plan?')} <a href="/contact">{t('contact_sales', 'Contact our sales team')}</a></p>
+        <p className="need_help">{t('need_help', 'Need help choosing a plan?')} <a href="/contactus">{t('contact_sales', 'Contact our sales team')}</a></p>
       </div>
     </div>
   );

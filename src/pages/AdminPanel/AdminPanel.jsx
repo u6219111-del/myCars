@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { fetchUsers, deleteUser } from "../../api/mockUsers";
 import { supabase } from "../../api/supabaseClient";
 import "./AdminPanel.css";
 
@@ -20,7 +21,7 @@ function AdminPanel() {
     image: "",
     automat: true,
     airConditioner: true,
-    available: true
+    available: true,
   });
 
   useEffect(() => {
@@ -31,7 +32,7 @@ function AdminPanel() {
           fetchCars(),
           fetchReviews(),
           fetchEmployees(),
-          fetchUsers()
+          fetchRegisteredUsers(),
         ]);
       } catch (e) {
         console.error(e);
@@ -41,8 +42,6 @@ function AdminPanel() {
     };
     fetchData();
   }, []);
-
-  
 
   const fetchCars = async () => {
     const { data, error } = await supabase
@@ -63,7 +62,7 @@ function AdminPanel() {
         image_url: newCar.image,
         automat: newCar.automat,
         air_conditioner: newCar.airConditioner,
-        available: true
+        available: true,
       };
 
       const { error } = await supabase.from("Cat").insert([car]);
@@ -78,7 +77,7 @@ function AdminPanel() {
         image: "",
         automat: true,
         airConditioner: true,
-        available: true
+        available: true,
       });
     } catch (error) {
       console.error("Error adding car:", error);
@@ -90,8 +89,6 @@ function AdminPanel() {
     const { error } = await supabase.from("Cat").delete().eq("id", id);
     if (!error) fetchCars();
   };
-
-
 
   const fetchReviews = async () => {
     const { data, error } = await supabase.from("reviews").select("*");
@@ -108,8 +105,6 @@ function AdminPanel() {
     fetchReviews();
   };
 
-
-
   const fetchEmployees = async () => {
     const { data, error } = await supabase.from("employees").select("*");
     if (!error) setEmployees(data || []);
@@ -119,21 +114,51 @@ function AdminPanel() {
     await supabase.from("employees").delete().eq("id", id);
     fetchEmployees();
   };
-
-
-  const fetchUsers = async () => {
-    const { data:Profiles , error } = await supabase
-      .from("Profiles")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (!error) setUsers(Profiles || []);
+  const fetchRegisteredUsers = async () => {
+    try {
+      const usersData = await fetchUsers();
+      
+      // For each user, get their profile to get the proper username
+      const usersWithProfiles = [];
+      for (const user of usersData) {
+        try {
+          const profileRes = await fetch(`/api/profiles?id=${encodeURIComponent(user.id)}`);
+          const profileData = await profileRes.json();
+          const profile = profileData[0];
+          
+          usersWithProfiles.push({
+            id: user.id,
+            username: profile?.username || user.email,
+            avatar_url: profile?.avatar_url || '',
+            created_at: user.created_at || user.created_at,
+            email: user.email
+          });
+        } catch (profileError) {
+          // If profile doesn't exist, use user data
+          usersWithProfiles.push({
+            id: user.id,
+            username: user.email,
+            avatar_url: '',
+            created_at: user.created_at || new Date().toISOString(),
+            email: user.email
+          });
+        }
+      }
+      
+      setUsers(usersWithProfiles || []);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
   };
-
+  
   const handleDeleteUser = async (id) => {
-    const { error } = await supabase.from("Profiles").delete().eq("id", id);
-    if (!error) fetchUsers();
+    try {
+      await deleteUser(id);
+      fetchRegisteredUsers();
+    } catch (error) {
+      console.error('Error deleting user:', error);
+    }
   };
-
   /* ===================== RENDER ===================== */
 
   const renderDashboard = () => (
@@ -174,9 +199,7 @@ function AdminPanel() {
           />
           <select
             value={newCar.category}
-            onChange={(e) =>
-              setNewCar({ ...newCar, category: e.target.value })
-            }
+            onChange={(e) => setNewCar({ ...newCar, category: e.target.value })}
           >
             <option value="Sedan">Sedan</option>
             <option value="SUV">SUV</option>
@@ -299,10 +322,14 @@ function AdminPanel() {
         {users.map((user) => (
           <div key={user.id} className="admin-user-item">
             <div className="admin-user-info">
-              <h5>{user.full_name || "No name"}</h5>
-              <p>{user.email}</p>
-              <p>Role: {user.role}</p>
-              <p>Registered: {new Date(user.created_at).toLocaleDateString()}</p>
+              <h5>{user.username || "No name"}</h5>
+              <p>ID: {user.id}</p>
+              <p>
+                Registered: {new Date(user.created_at).toLocaleDateString()}
+              </p>
+              {user.avatar_url && (
+                <img src={user.avatar_url} alt={user.username} width={50} />
+              )}
             </div>
             <button
               className="admin-delete-btn"

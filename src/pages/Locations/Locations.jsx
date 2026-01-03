@@ -22,7 +22,7 @@ const locations = [
     address: t('mercedes_address'),
     phone: "+49 711 17 0",
     hours: t('working_hours'),
-    image: "https://images.unsplash.com/photo-1549921296-3b4a4f1c56d6"
+    image: "https://www.ixbt.com/img/n1/news/2024/0/6/urxt8co98zfahd8yd6axono1u4mgexqe_large.png"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const locations = [
     address: t('audi_address'),
     phone: "+49 841 89 0",
     hours: t('working_hours'),
-    image: "https://images.unsplash.com/photo-1605559424843-9b8a3c0f8c6d"
+    image: "https://photobooth.cdn.sports.ru/preset/post/f/08/553a0ea16429cb51fe022cac86b3e.jpeg?f=webp&q=90&s=2x&w=730"
   }
 ];
 

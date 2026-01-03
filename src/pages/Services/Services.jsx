@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import "./Services.css";
+import FAQAccordion from "../../components/FAQAccordion/FAQAccordion";
 
 function Services() {
   const { t } = useTranslation();
@@ -130,6 +131,7 @@ function Services() {
         </div>
 
       </div>
+      <FAQAccordion/>
     </div>
   );
 }

@@ -2,12 +2,12 @@
   padding: 3rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
-  background: var(--card-bg);
+
   border-radius: 20px;
   margin: 4rem auto;
   box-shadow: var(--card-shadow);
   transition: var(--transition);
-  border: 1px solid var(--border-color);
+
   position: relative;
   overflow: hidden;
 }
@@ -125,12 +125,11 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
   margin-bottom: 3rem;
 }
 
 .pricing-card {
-  background: var(--card-gradient);
+
   border-radius: 20px;
   padding: 2.5rem 2rem;
   width: 380px;

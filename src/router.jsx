@@ -18,7 +18,7 @@ import Locations from "./pages/Locations/Locations";
 import CheckoutSuccess from "./pages/CheckoutSucces/CheckoutSuccess";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import UserAccount from "./pages/UserAccount/UserAccount";
-
+import PrivateRoute from "./PrivateRouter";
 export const myRouter = createBrowserRouter([
   {
     path: "/",
@@ -44,8 +44,22 @@ export const myRouter = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "locations", element: <Locations /> },
       { path: "checkout-success", element: <CheckoutSuccess /> },
-      { path: "admin", element: <AdminPanel /> },
-      { path: "my-account", element: <UserAccount /> },
+      {
+        path: "admin",
+        element: (
+          <PrivateRoute>
+            <AdminPanel />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-account",
+        element: (
+          <PrivateRoute>
+            <UserAccount />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

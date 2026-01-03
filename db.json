@@ -1,0 +1,127 @@
+{
+  "users": [
+    {
+      "id": "1766919349022",
+      "email": "user2@example.com",
+      "password": "UMAR2010",
+      "created_at": "2025-12-28T10:56:00.000Z"
+    },
+    {
+      "id": "1766919349215",
+      "email": "user3@example.com",
+      "password": "UMAR2010",
+      "created_at": "2025-12-28T10:56:20.000Z"
+    },
+    {
+      "id": "1766919349430",
+      "email": "user4@example.com",
+      "password": "UMAR2010",
+      "created_at": "2025-12-28T10:56:40.000Z"
+    },
+    {
+      "id": "69a4",
+      "email": "testuser@example.com",
+      "password": "testpass123",
+      "created_at": "2025-12-28T11:00:00.000Z"
+    },
+    {
+      "id": "1766923737185",
+      "email": "u05929237@gmail.com",
+      "password": "UMAR2010",
+      "created_at": "2025-12-28T12:08:57.185Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "1766919348791",
+      "username": "umar",
+      "avatar_url": "",
+      "created_at": "2025-12-28T10:55:48.838Z"
+    },
+    {
+      "id": "1766919349215",
+      "username": "user3",
+      "avatar_url": "",
+      "created_at": "2025-12-28T10:55:49.229Z"
+    },
+    {
+      "id": "1766919349430",
+      "username": "user4",
+      "avatar_url": "",
+      "created_at": "2025-12-28T10:55:49.452Z"
+    },
+    {
+      "id": "69a4",
+      "username": "testuser",
+      "avatar_url": "",
+      "created_at": "2025-12-28T11:00:00.000Z"
+    }
+  ],
+  "cars": [
+    {
+      "id": "1",
+      "name": "Toyota Camry",
+      "category": "Sedan",
+      "price": 45,
+      "image_url": "https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      "automat": true,
+      "air_conditioner": true,
+      "available": true,
+      "created_at": "2025-12-28T10:55:48.838Z"
+    },
+    {
+      "id": "2",
+      "name": "Honda CR-V",
+      "category": "SUV",
+      "price": 60,
+      "image_url": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      "automat": true,
+      "air_conditioner": true,
+      "available": true,
+      "created_at": "2025-12-28T10:56:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "BMW X5",
+      "category": "SUV",
+      "price": 80,
+      "image_url": "https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      "automat": true,
+      "air_conditioner": true,
+      "available": false,
+      "created_at": "2025-12-28T10:56:20.000Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "user_name": "John Doe",
+      "comment": "Great car and excellent service!",
+      "approved": true,
+      "created_at": "2025-12-28T10:55:48.838Z"
+    },
+    {
+      "id": "2",
+      "user_name": "Jane Smith",
+      "comment": "Good experience, would recommend.",
+      "approved": false,
+      "created_at": "2025-12-28T10:56:00.000Z"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "name": "Michael Johnson",
+      "email": "michael@company.com",
+      "position": "Manager",
+      "created_at": "2025-12-28T10:55:48.838Z"
+    },
+    {
+      "id": "2",
+      "name": "Sarah Williams",
+      "email": "sarah@company.com",
+      "position": "Sales Representative",
+      "created_at": "2025-12-28T10:56:00.000Z"
+    }
+  ]
+}
