@@ -6,15 +6,15 @@ function Three() {
   return (
     <div className="stats-section">
       <div className="stat-item">
-        <h1 className="stat-number">20k+</h1>
+        <p className="stat-number">20k+</p>
         <h2 className="stat-title">{t("happy_customers")}</h2>
       </div>
       <div className="stat-item">
-        <h1 className="stat-number">540+</h1>
+        <p className="stat-number">540+</p>
         <h2 className="stat-title">{t("count_of_cars")}</h2>
       </div>
       <div className="stat-item">
-        <h1 className="stat-number">25+</h1>
+        <p className="stat-number">25+</p>
         <h2 className="stat-title">{t("years_of_experience")}</h2>
       </div>
     </div>

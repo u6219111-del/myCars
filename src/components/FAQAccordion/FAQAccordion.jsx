@@ -12,7 +12,7 @@ const FAQAccordion = () => {
 
   const faqs = [
     {
-      question: t('faq1_question', 'What documents do I need to rent a car?'),
+      question: t('faq1_question'),
       answer: t('faq1_answer', 'You will need a valid driver\'s license, a credit card in your name, and proof of insurance. For international drivers, a passport is also required.')
     },
     {

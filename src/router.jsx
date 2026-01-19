@@ -17,7 +17,9 @@ import Blog from "./pages/Blog/Blog";
 import Locations from "./pages/Locations/Locations";
 import CheckoutSuccess from "./pages/CheckoutSucces/CheckoutSuccess";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import AdminLogin from "./pages/AdminLogin/AdminLogin";
 import UserAccount from "./pages/UserAccount/UserAccount";
+import Employees from "./pages/Employees/Employees";
 import PrivateRoute from "./PrivateRouter";
 export const myRouter = createBrowserRouter([
   {
@@ -43,11 +45,16 @@ export const myRouter = createBrowserRouter([
       { path: "faq", element: <FAQ /> },
       { path: "blog", element: <Blog /> },
       { path: "locations", element: <Locations /> },
+      { path: "employees", element: <Employees /> },
       { path: "checkout-success", element: <CheckoutSuccess /> },
+      {
+        path: "admin-login",
+        element: <AdminLogin />,
+      },
       {
         path: "admin",
         element: (
-          <PrivateRoute>
+          <PrivateRoute requireAdmin={true}>
             <AdminPanel />
           </PrivateRoute>
         ),

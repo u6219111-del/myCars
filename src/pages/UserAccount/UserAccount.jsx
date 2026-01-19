@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { getProfile, updateProfile } from "../../api/mockUsers";
-
+import "./UserAccount.css";
 export default function UserAccount() {
   const { user } = useAuth();
   const [profile, setProfile] = useState(null);

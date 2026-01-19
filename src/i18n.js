@@ -1,11 +1,10 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-// Translation resources
 const resources = {
   en: {
     translation: {
-      // Header
+     
       home: "Home",
       vehicles: "Vehicles",
       services: "Services",
@@ -19,6 +18,7 @@ const resources = {
       logout: "Logout",
       hi: "Hi",
       testimonials: "Testimonials",
+      employees: "Employees",
 
       newsletter_title: "Subscribe to our newsletter",
       newsletter_subtitle: "Get the latest updates straight to your inbox",
@@ -47,7 +47,7 @@ const resources = {
       partner_6_description: "Financial services and consulting experts.",
       become_partner: "Become a Partner",
 
-      // Home page
+    
       premium_car_rentals: "Premium Car Rentals",
       discover_freedom:
         "Discover the freedom of driving with our premium fleet. From city cars to luxury SUVs, we have the perfect vehicle for every journey.",
@@ -58,7 +58,7 @@ const resources = {
       google_play: "GET IT ON Google Play",
       rent_a_premium_car:
         "Rent a premium car and enjoy comfort, style and power with every kilometer.",
-      // Vehicles page
+      
       select_vehicle_group: "Select a vehicle group",
       all_vehicles: "All Vehicles",
       minivan: "Minivan",
@@ -75,7 +75,7 @@ const resources = {
       add_to_favorites: "Add to Favorites",
       in_favorites: "In Favorites",
 
-      // Cart page
+  
       shopping_cart: "Shopping Cart",
       your_cart_is_empty: "Your cart is empty",
       start_adding_cars: "Start adding some cars to your cart",
@@ -121,13 +121,13 @@ const resources = {
       feature_6_description:
         "Fast and stable performance even under heavy load.",
 
-      // Favorites page
       your_favorites: "Your Favorites",
       favorites_list_empty: "Your favorites list is empty",
       start_adding_favorites: "Start adding some cars to your favorites",
 
-      // Checkout success page
+  
       order_placed_successfully: "Order Placed Successfully!",
+      confirm_order: "Confirm your order?",
       thank_you_purchase:
         "Thank you for your purchase. Your order has been confirmed and will be processed shortly.",
       what_happens_next: "What happens next?",
@@ -137,7 +137,7 @@ const resources = {
       return_home: "Return to Home",
       browse_more_vehicles: "Browse More Vehicles",
 
-      // Login page
+  
       sign_in: "Sign In",
       login_success: "You have logged in successfully!",
       logged_in_successfully: "You have logged in successfully!",
@@ -151,18 +151,18 @@ const resources = {
       sign_up: "Sign up",
       failed_sign_in: "Failed to sign in",
 
-      // Register page
+    
       passwords_do_not_match: "Passwords do not match",
       failed_create_account: "Failed to create an account",
 
-      // Register page
+    
       create_account: "Create Account",
       register_success_msg: "Registration successful!",
       confirm_password: "Confirm Password",
       already_have_account: "Already have an account?",
       sign_in_link: "Sign in",
 
-      // Services page
+     
       our_services_title: "Our Services",
       services_subtitle:
         "Explore our range of services designed to make your car rental experience seamless and enjoyable.",
@@ -184,8 +184,20 @@ const resources = {
         "GPS navigation for easy and efficient directions on the go.",
       child_safety_seats_desc:
         "Child safety seats for a secure and comfortable ride.",
+      premium_fleet_desc:
+        "Access our premium fleet of luxury vehicles for an exceptional driving experience.",
+      competitive_pricing_desc:
+        "Enjoy competitive pricing with no hidden fees and transparent rates.",
+      easy_booking_desc:
+        "Book your car easily online or via our mobile app with just a few clicks.",
+      customer_support_desc:
+        "Get 24/7 customer support from our dedicated team whenever you need assistance.",
+      one_way_rentals_desc:
+        "Flexible one-way rentals allowing you to pick up and drop off at different locations.",
+      long_term_deals_desc:
+        "Special long-term rental deals for extended periods with discounted rates.",
       why_choose_our_services: "Why Choose Our Services?",
-      // Footer
+ 
       address: "Address",
       email: "Email",
       phone: "Phone",
@@ -197,7 +209,17 @@ const resources = {
       google_play_footer: "GET IT ON Google Play",
       copyright: "© Copyright Car Rental 2024. Design by Figma.guru",
 
-      // Additional components
+      hero_title: "Premium Car Rentals",
+      hero_subtitle:
+        "Experience luxury and comfort with our premium fleet of vehicles",
+      rent_a_car: "Rent a Car",
+      our_services: "Our Services",
+      car_image_alt: "Luxury Car",
+      happy_customers: "Happy Customers",
+      years_experience: "Years Experience",
+      car_brands: "Car Brands",
+
+   
       step1_title: "Erat at semper",
       step1_desc:
         "Non amet fermentum est in enim at sit ullamcorper. Sit elementum rhoncus nullam feugiat. Risus sem fermentum",
@@ -280,28 +302,25 @@ const resources = {
       unlock_unforgettable_memories:
         "Unlock unforgettable memories on the road",
       memories_description:
-        "Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor tristique et gravida. Quis nunc interdum gravida ullamcorper",
-      memories_item1:
-        "Velit semper morbi. Purus non eu cursus porttitor tristique et gravida...",
-      memories_item2:
-        "Purus non eu cursus porttitor tristique et gravida. Quis nunc interdum",
-      memories_item3:
-        "Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor",
-      memories_item4: "Quis nunc interdum gravida ullamcorper",
+        "Create unforgettable memories with our premium car rental service. Every mile is filled with comfort and adventure.",
+      memories_item1: "Comfort and convenience on every mile...",
+      memories_item2: "Reliability and safety in every trip.",
+      memories_item3: "Wide selection of cars for any need.",
+      memories_item4: "Professional support 24/7.",
 
       download_our_app: "Download our app",
       phone_description:
-        "Turpis morbi enim nisi pulvinar leo dui tellus. Faucibus egestas semper diam rutrum dictumst ut donec. Nisi nisi morbi vel in vulputate. Nulla nam eget urna fusce vulputate at risus",
+        "Manage your bookings, track trips, and get special offers right from your phone. Download our mobile app for a seamless experience.",
       app_store_download: "Downoload on the",
       google_play_download: "GET IT ON",
 
       reviews_from_customers: "Reviews from our customers",
       review1_text:
-        "Et aliquet netus at sapien pellentesque mollis nec dignissim maecenas. Amet erat volutpat quisque odio purus feugiat. In gravida neque",
+        "The car rental service was exceptional! The vehicle was clean, well-maintained, and exactly what we needed for our family vacation. The booking process was seamless and the staff was incredibly helpful.",
       review2_text:
-        "Purus consectetur varius quis urna phasellus enim mattis. Sem tincidunt tortor nunc egestas amet adipiscing ligula",
+        "I was impressed with the variety of cars available and the ease of booking. The customer support was outstanding, and the vehicle performed perfectly throughout our trip.",
       review3_text:
-        "Quam neque odio urna euismod felis. Sit egestas magna in quisque famesdapibus quis sapien magna. Nisl non eget sit pellentesque tristique et",
+        "Highly recommend this car rental service. Competitive prices, excellent service, and a smooth experience from start to finish. Will definitely use again.",
 
       car_rental_blog: "Car Rental Blog",
       blog_subtitle: "Tips, guides, and insights for your next journey",
@@ -338,10 +357,13 @@ const resources = {
       testimonial3_company: "Creative Designs Co.",
       testimonial3_text:
         "I've been using their services for over two years now, and they consistently exceed my expectations. The variety of vehicles, competitive pricing, and 24/7 support make them my go-to choice for all transportation needs.",
-      ready_experience_excellence: "Ready to Experience Excellence?",
-      join_satisfied_customers:
-        "Join thousands of satisfied customers who trust us for their transportation needs.",
-      book_ride_today: "Book Your Ride Today",
+      share_your_experience: "Share Your Experience",
+      leave_testimonial: "Leave a testimonial about our services",
+      your_name: "Your Name",
+      company_optional: "Company (optional)",
+      your_testimonial: "Your Testimonial",
+      rating: "Rating",
+      submit_testimonial: "Submit Testimonial",
 
       frequently_asked_questions: "Frequently Asked Questions",
       faq_subtitle:
@@ -437,11 +459,121 @@ const resources = {
       member_since: "Member Since",
       not_provided: "Not provided",
       unknown: "Unknown",
+      submitting: "Submitting...",
+      login_to_review: "Please log in to leave a review",
+      rating: "Rating",
+      review_submitted_success:
+        "Thank you for your review! It has been successfully added.",
+      review_submit_error:
+        "An error occurred while submitting your review. Please try again.",
+      total_cars: "Total Cars",
+      total_reviews: "Total Reviews",
+      total_employees: "Total Employees",
+      manage_cars: "Manage Cars",
+      add_car: "Add Car",
+      delete: "Delete",
+      approve: "Approve",
+      message_sent: "Message sent successfully!",
+      message_error: "Error sending message!",
+      john_doe: "John Doe",
+      ceo_company: "CEO, Company Inc",
+      testimonial1_content:
+        "The car rental service was exceptional! The vehicle was clean, well-maintained, and exactly what we needed for our family vacation. The booking process was seamless and the staff was incredibly helpful.",
+      jane_smith: "Jane Smith",
+      travel_blogger: "Travel Blogger",
+      testimonial2_content:
+        "As a frequent traveler, I appreciate the reliability and professionalism of this car rental company. Their premium fleet and excellent customer service make every trip stress-free. Highly recommended!",
+      mike_wilson: "Mike Wilson",
+      timeline_event_1_title: "Company Founded",
+      timeline_event_1_description:
+        "Our company was established with a vision to provide premium car rental services.",
+      timeline_event_2_title: "First Location Opened",
+      timeline_event_2_description:
+        "We opened our first rental location in the city center.",
+      timeline_event_3_title: "Fleet Expansion",
+      timeline_event_3_description:
+        "Expanded our fleet to include luxury and sports cars.",
+      timeline_event_4_title: "International Expansion",
+      timeline_event_4_description: "Started operations in multiple countries.",
+      company_timeline: "Company Timeline",
+      timeline_subtitle: "Key milestones in our journey",
+      
+   
+      our_team: "Our Team",
+      team_subtitle: "Professionals who make your trip comfortable",
+      team_members: "Team Members",
+      experience_years: "Years of Experience",
+      customer_satisfaction: "Customer Satisfaction",
+      meet_our_team: "Meet Our Team",
+      all: "All",
+      managers: "Managers",
+      technicians: "Technicians",
+      no_employees_found: "No employees found",
+      no_employees_in_database: "No employees in database yet",
+      try_different_filter: "Try a different filter",
+      loading_employees: "Loading employees...",
+      
+    
+      our_team: "Our Team",
+      team_subtitle: "Professionals who make your trip comfortable",
+      team_members: "Team Members",
+      experience_years: "Years of Experience",
+      customer_satisfaction: "Customer Satisfaction",
+      meet_our_team: "Meet Our Team",
+      all: "All",
+      managers: "Managers",
+      technicians: "Technicians",
+      no_employees_found: "No employees found",
+      try_different_filter: "Try a different filter",
+      loading_employees: "Loading employees...",
     },
   },
   ru: {
     translation: {
-      // Header
+
+      home: "Главная",
+      vehicles: "Автомобили",
+      services: "Услуги",
+      about_us: "О нас",
+      contact: "Контакты",
+      blog: "Блог",
+      favorites: "Избранное",
+      cart: "Корзина",
+      login: "Войти",
+      register: "Регистрация",
+      logout: "Выйти",
+      hi: "Привет",
+      testimonials: "Отзывы",
+
+      our_services_title: "Наши услуги",
+      services_subtitle:
+        "Мы предлагаем полный спектр услуг для комфортной и безопасной аренды автомобиля",
+
+      premium_fleet: "Премиальный автопарк",
+      premium_fleet_desc:
+        "Современные и тщательно обслуживаемые автомобили премиум-класса",
+
+      competitive_pricing: "Конкурентные цены",
+      competitive_pricing_desc:
+        "Прозрачная ценовая политика без скрытых платежей",
+
+      easy_booking: "Простое бронирование",
+      easy_booking_desc:
+        "Быстрое и удобное онлайн-бронирование в несколько кликов",
+
+      customer_support: "Круглосуточная поддержка",
+      customer_support_desc:
+        "Наша служба поддержки доступна 24/7 для помощи клиентам",
+
+      one_way_rentals: "Аренда в одну сторону",
+      one_way_rentals_desc: "Возможность вернуть автомобиль в другом городе",
+
+      long_term_deals: "Долгосрочная аренда",
+      long_term_deals_desc:
+        "Специальные предложения для долгосрочной аренды автомобилей",
+
+      why_choose_our_services: "Почему выбирают наши услуги",
+ 
       home: "Главная",
       vehicles: "Автомобили",
       services: "Услуги",
@@ -484,7 +616,7 @@ const resources = {
         "Эксперты в области финансовых услуг и консалтинга.",
       become_partner: "Стать партнером",
 
-      // Home page
+    
       premium_car_rentals: "Премиальная аренда автомобилей",
       discover_freedom:
         "Откройте для себя свободу вождения с нашим премиальным автопарком. От городских автомобилей до роскошных внедорожников - у нас есть идеальный автомобиль для каждого путешествия.",
@@ -495,7 +627,7 @@ const resources = {
       google_play: "Доступно в Google Play",
       rent_a_premium_car:
         "Арендуйте премиальный автомобиль и наслаждайтесь комфортом, стилем и мощью на каждом километре.",
-      // Vehicles page
+      
       select_vehicle_group: "Выберите группу автомобилей",
       all_vehicles: "Все автомобили",
       minivan: "Минивэн",
@@ -518,7 +650,7 @@ const resources = {
       browse_cars: "Посмотреть автомобили",
       contact_us: "Связаться с нами",
 
-      // Cart page
+  
       shopping_cart: "Корзина",
       your_cart_is_empty: "Ваша корзина пуста",
       start_adding_cars: "Начните добавлять автомобили в корзину",
@@ -557,13 +689,14 @@ const resources = {
       feature_6_title: "Высокая производительность",
       feature_6_description: "Быстрая работа даже при высокой нагрузке.",
 
-      // Favorites page
+      
       your_favorites: "Ваше избранное",
       favorites_list_empty: "Ваш список избранного пуст",
       start_adding_favorites: "Начните добавлять автомобили в избранное",
 
-      // Checkout success page
+    
       order_placed_successfully: "Заказ успешно оформлен!",
+      confirm_order: "Подтвердить заказ?",
       thank_you_purchase:
         "Спасибо за покупку. Ваш заказ подтвержден и будет обработан в ближайшее время.",
       what_happens_next: "Что дальше?",
@@ -575,7 +708,7 @@ const resources = {
       return_home: "Вернуться на главную",
       browse_more_vehicles: "Просмотреть другие автомобили",
 
-      // Login page
+  
       sign_in: "Войти",
       login_success: "Вы вошли в систему!",
       logged_in_successfully: "Вы вошли в систему!",
@@ -589,18 +722,18 @@ const resources = {
       sign_up: "Зарегистрироваться",
       failed_sign_in: "Не удалось войти",
 
-      // Register page
+ 
       passwords_do_not_match: "Пароли не совпадают",
       failed_create_account: "Не удалось создать аккаунт",
 
-      // Register page
+      
       create_account: "Создать аккаунт",
       register_success_msg: "Регистрация успешна!",
       confirm_password: "Подтвердите пароль",
       already_have_account: "Уже есть аккаунт?",
       sign_in_link: "Войти",
 
-      // Services page
+     
       our_services_title: "Наши услуги",
       services_subtitle:
         "Изучите наш ассортимент услуг, разработанных для того, чтобы сделать ваш опыт аренды автомобиля беспроблемным и приятным.",
@@ -622,8 +755,19 @@ const resources = {
         "Жолдо оңой жана натыйжалуу багыттоо үчүн GPS навигациясы.",
       child_safety_seats_desc:
         "Детские автокресла для безопасной и комфортной поездки.",
-      why_choose_our_services: "Почему выбирают наши услуги?",
-      // Footer
+      premium_fleet_desc:
+        "Получите доступ к нашему премиум автопарку роскошных автомобилей для исключительного опыта вождения.",
+      competitive_pricing_desc:
+        "Наслаждайтесь конкурентными ценами без скрытых сборов и прозрачными тарифами.",
+      easy_booking_desc:
+        "Бронируйте автомобиль легко онлайн или через наше мобильное приложение всего за несколько кликов.",
+      customer_support_desc:
+        "Получите круглосуточную поддержку клиентов от нашей преданной команды в любое время.",
+      one_way_rentals_desc:
+        "Гибкая аренда в одну сторону, позволяющая забрать и сдать автомобиль в разных местах.",
+      long_term_deals_desc:
+        "Специальные предложения по долгосрочной аренде на продолжительные периоды со скидками.",
+  
       address: "Адрес",
       email: "Электронная почта",
       phone: "Телефон",
@@ -717,28 +861,57 @@ const resources = {
       unlock_unforgettable_memories:
         "Разблокируйте незабываемые воспоминания на дороге",
       memories_description:
-        "Аликуам адиписцинг велит семпер морби. Пурус нон эу курсус порттитор триistique эт гравида. Куис нунц интердум гравида улламкорпер",
-      memories_item1:
-        "Велит семпер морби. Пурус нон эу курсус порттитор триistique эт гравида...",
-      memories_item2:
-        "Пурус нон эу курсус порттитор триistique эт гравида. Куис нунц интердум",
-      memories_item3:
-        "Аликуам адиписцинг велит семпер морби. Пурус нон эу курсус порттитор",
-      memories_item4: "Куис нунц интердум гравида улламкорпер",
+        "Создавайте незабываемые воспоминания с нашим премиум сервисом аренды автомобилей. Каждый километр наполнен комфортом и приключениями.",
+      memories_item1: "Комфорт и удобство на каждом километре пути...",
+      memories_item2: "Надежность и безопасность в каждой поездке.",
+      memories_item3: "Широкий выбор автомобилей для любых нужд.",
+      memories_item4: "Профессиональная поддержка 24/7.",
+
+      frequently_asked_questions: "Часто задаваемые вопросы",
+      faq_subtitle: "Всё, что вам нужно знать об аренде автомобилей",
+
+      faq1_question: "Какие документы нужны для аренды автомобиля?",
+      faq1_answer:
+        "Для аренды автомобиля вам потребуется действующее водительское удостоверение, кредитная карта на ваше имя и подтверждение страхования. Для иностранных водителей также необходим паспорт.",
+
+      faq2_question: "Можно ли изменить или отменить бронирование?",
+      faq2_answer:
+        "Да, вы можете изменить или отменить бронирование не позднее чем за 24 часа до запланированного времени получения автомобиля. При отмене менее чем за 24 часа может взиматься комиссия.",
+
+      faq3_question: "Что входит в стоимость аренды?",
+      faq3_answer:
+        "В стоимость аренды входит автомобиль, базовое страховое покрытие и налоги. Дополнительные услуги, такие как GPS, детские кресла и расширенная страховка, доступны за дополнительную плату.",
+
+      faq4_question: "Есть ли возрастные ограничения для аренды автомобиля?",
+      faq4_answer:
+        "Минимальный возраст для аренды автомобиля — 21 год. Для водителей младше 25 лет может взиматься дополнительная плата. Для некоторых категорий автомобилей действуют более высокие возрастные требования.",
+
+      faq5_question: "Что делать в случае дорожно-транспортного происшествия?",
+      faq5_answer:
+        "В случае аварии немедленно свяжитесь с нашей службой поддержки, работающей 24/7. Не покидайте место происшествия без уведомления. Вам потребуется заполнить отчёт о ДТП.",
+
+      faq6_question: "Можно ли вернуть автомобиль в другом месте?",
+      faq6_answer:
+        "Да, мы предлагаем аренду с возвратом в другом месте между выбранными локациями. В зависимости от расстояния и доступности может взиматься дополнительная плата. Пожалуйста, свяжитесь с нашей службой поддержки для организации.",
+
+      still_have_questions: "Остались вопросы?",
+      contact_support_desc:
+        "Свяжитесь с нашей службой поддержки, и мы с радостью вам поможем",
+      contact_support: "Связаться с поддержкой",
 
       download_our_app: "Скачайте наше приложение",
       phone_description:
-        "Турпис морби эним nisi пулвинar лео дуи тэллус. Фауцибус эгэстас семпер диам рутрум дицтумст ут донец. Ниси nisi морби вэл ин вулпутатэ. Нулла нам эгет урна фусце вулпутатэ ат рисус",
+        "Управляйте бронированиями, отслеживайте поездки и получайте специальные предложения прямо с вашего телефона. Скачайте наше мобильное приложение для беспроблемного опыта.",
       app_store_download: "Скачать в",
       google_play_download: "ДОСТУПНО В",
 
       reviews_from_customers: "Отзывы наших клиентов",
       review1_text:
-        "Эт алиquet нетус ат сапиен пэллентэсквэ моллис нец дигниссим маэценас. Амет эрат волутпат квисквэ одио пурус фэугиат. Ин гравида неkвэ",
+        "Услуги проката автомобилей были исключительными! Автомобиль был чистым, хорошо обслуживаемым и именно тем, что нам нужно было для семейного отдыха. Процесс бронирования прошел безупречно, а персонал был невероятно helpful.",
       review2_text:
-        "Пурус цонсэцтетур вариус квис урна пhасэллус эним маттис. Сэм тинцидунт тортор нунц эгэстас амет адиписцинг лигула",
+        "Я был впечатлен разнообразием доступных автомобилей и простотой бронирования. Поддержка клиентов была outstanding, и автомобиль работал perfectly на протяжении всей нашей поездки.",
       review3_text:
-        "Квам неkвэ одио урна эуисмод фэлис. Сит эгэстас магна ин kвисkвэ фамэсдапибус квис сапиен магна. Нисл нон эгет сит пэллентэсквэ триistique эт",
+        "Настоятельно рекомендую этот сервис проката автомобилей. Конкурентные цены, отличный сервис и гладкий опыт от начала до конца. Обязательно воспользуюсь снова.",
 
       car_rental_blog: "Блог по аренде автомобилей",
       blog_subtitle:
@@ -779,10 +952,45 @@ const resources = {
       testimonial3_company: "Creative Designs Co.",
       testimonial3_text:
         "Я пользуюсь их услугами уже более двух лет, и они постоянно превосходят мои ожидания. Разнообразие автомобилей, конкурентные цены и круглосуточная поддержка делают их моим первым выбором для всех транспортных потребностей.",
-      ready_experience_excellence: "Готовы испытать совершенство?",
-      join_satisfied_customers:
-        "Присоединяйтесь к тысячам довольных клиентов, которые доверяют нам свои транспортные потребности.",
-      book_ride_today: "Забронируйте поездку сегодня",
+      share_your_experience: "Поделитесь своим опытом",
+      leave_testimonial: "Оставьте отзыв о наших услугах",
+      your_name: "Ваше имя",
+      company_optional: "Компания (необязательно)",
+      your_testimonial: "Ваш отзыв",
+      rating: "Рейтинг",
+      submit_testimonial: "Отправить отзыв",
+
+      premium_car_rentals: "Премиальная аренда автомобилей",
+      discover_freedom:
+        "Испытайте роскошь и комфорт с нашим премиальным автопарком",
+      rent_a_car: "Арендовать авто",
+      our_services: "Наши услуги",
+      car_image_alt: "Роскошный автомобиль",
+      happy_customers: "Довольные клиенты",
+      years_experience: "Лет опыта",
+      car_brands: "Автомобильные бренды",
+
+      our_services: "Биздин кызматтар",
+      download_app: "Мобилдик колдонмону жүктөп алуу",
+      app_store: "App Store дүкөнүнөн жүктөп алыңыз",
+      google_play: "Google Play дүкөнүнөн жүктөп алыңыз",
+      rent_a_premium_car:
+        "Премиум автоунааны ижарага алып, ар бир километрде ыңгайлуулукту, стилди жана күчтү сезиңиз.",
+
+      loading_cars: "Загрузка автомобилей...",
+      failed_load_cars: "Не удалось загрузить автомобили",
+      no_cars_found: "Автомобили не найдены",
+
+      choose_car_suits: "Выберите автомобиль, который вам подходит",
+      view_all: "Посмотреть все",
+
+      automatic: "Автомат",
+      manual: "Механика",
+
+      air_conditioner: "Кондиционер",
+      no_ac: "Без кондиционера",
+
+      view_details: "Подробнее",
 
       frequently_asked_questions: "Часто задаваемые вопросы",
       faq_subtitle:
@@ -812,6 +1020,20 @@ const resources = {
 
       our_locations: "Наши местоположения",
       locations_subtitle: "Удобно расположенные офисы для лучшего обслуживания",
+      
+   
+      our_team: "Наша команда",
+      team_subtitle: "Профессионалы, которые делают вашу поездку комфортной",
+      team_members: "Сотрудников",
+      experience_years: "Лет опыта",
+      customer_satisfaction: "Довольных клиентов",
+      meet_our_team: "Познакомьтесь с нашей командой",
+      all: "Все",
+      managers: "Менеджеры",
+      technicians: "Техники",
+      no_employees_found: "Сотрудники не найдены",
+      try_different_filter: "Попробуйте другой фильтр",
+      loading_employees: "Загрузка сотрудников...",
       downtown_address: "123 Главная улица, Центр города",
       downtown_hours: "Пн-Вс: 7:00 AM - 10:00 PM",
       hotel_address: "789 Район отелей, Центр города",
@@ -880,6 +1102,206 @@ const resources = {
       member_since: "Участник с",
       not_provided: "Не указано",
       unknown: "Неизвестно",
+      submitting: "Отправка...",
+      login_to_review: "Пожалуйста, войдите в систему, чтобы оставить отзыв",
+      rating: "Рейтинг",
+      review_submitted_success:
+        "Спасибо за ваш отзыв! Он был успешно добавлен.",
+      review_submit_error:
+        "Произошла ошибка при добавлении отзыва. Пожалуйста, попробуйте еще раз.",
+      total_cars: "Всего автомобилей",
+      total_reviews: "Всего отзывов",
+      total_employees: "Всего сотрудников",
+      manage_cars: "Управление автомобилями",
+      add_car: "Добавить автомобиль",
+      delete: "Удалить",
+      approve: "Одобрить",
+      message_sent: "Сообщение отправлено успешно!",
+      message_error: "Ошибка при отправке сообщения!",
+      john_doe: "Джон Доу",
+      ceo_company: "Генеральный директор, Компания Inc",
+      testimonial1_content:
+        "Услуги проката автомобилей были исключительными! Автомобиль был чистым, хорошо обслуживаемым и именно тем, что нам нужно было для семейного отдыха. Процесс бронирования прошел безупречно, а персонал был невероятно helpful.",
+      jane_smith: "Джейн Смит",
+      travel_blogger: "Блогер путешествий",
+      testimonial2_content:
+        "Как частый путешественник, я ценю надежность и профессионализм этой компании по аренде автомобилей. Их премиальный автопарк и отличное обслуживание клиентов делают каждую поездку без стресса. Настоятельно рекомендую!",
+      mike_wilson: "Майк Уилсон",
+      timeline_event_1_title: "Компания основана",
+      timeline_event_1_description:
+        "Наша компания была основана с видением предоставления премиальных услуг по аренде автомобилей.",
+      timeline_event_2_title: "Открыта первая локация",
+      timeline_event_2_description:
+        "Мы открыли нашу первую аренду в центре города.",
+      timeline_event_3_title: "Расширение автопарка",
+      timeline_event_3_description:
+        "Расширили наш автопарк, включив роскошные и спортивные автомобили.",
+      timeline_event_4_title: "Международное расширение",
+      timeline_event_4_description: "Начали операции в нескольких странах.",
+      company_timeline: "Хронология компании",
+      timeline_subtitle: "Ключевые вехи в нашем пути",
+      
+
+      our_team: "Наша команда",
+      team_subtitle: "Профессионалы, которые делают вашу поездку комфортной",
+      team_members: "Сотрудников",
+      experience_years: "Лет опыта",
+      customer_satisfaction: "Довольных клиентов",
+      meet_our_team: "Познакомьтесь с нашей командой",
+      all: "Все",
+      managers: "Менеджеры",
+      technicians: "Техники",
+      no_employees_found: "Сотрудники не найдены",
+      try_different_filter: "Попробуйте другой фильтр",
+      loading_employees: "Загрузка сотрудников...",
+      locations:"местоположение",
+      employees:"сотрудники",
+
+
+      hero_title: "Премиум аренда автомобилей",
+      hero_subtitle:
+        "Испытайте роскошь и комфорт с нашим премиальным автопарком",
+      rent_a_car: "Арендовать авто",
+      our_services: "Наши услуги",
+      car_image_alt: "Роскошный автомобиль",
+
+      // About Us
+      drive_feels_extraordinary: "Где каждая поездка ощущается незабываемо",
+      variety_brands: "Разнообразие брендов",
+      variety_brands_desc:
+        "Широкий выбор автомобилей от ведущих производителей для удовлетворения любых потребностей.",
+      awesome_support: "Отличная поддержка",
+      awesome_support_desc:
+        "Наша команда всегда готова помочь вам в любое время дня и ночи.",
+      maximum_freedom: "Максимальная свобода",
+      maximum_freedom_desc:
+        "Наслаждайтесь полной свободой передвижения без ограничений.",
+      flexibility_on_go: "Гибкость в движении",
+      flexibility_on_go_desc:
+        "Адаптируйтесь к любым ситуациям с нашим гибким сервисом аренды.",
+
+      happy_customers: "Довольных клиентов",
+      count_of_cars: "Автомобилей",
+      years_of_experience: "Лет опыта",
+
+      unlock_unforgettable_memories:
+        "Откройте незабываемые воспоминания на дороге",
+      memories_description:
+        "Создавайте прекрасные моменты с нашим премиум сервисом аренды автомобилей.",
+      memories_item1: "Комфорт и удобство на каждом километре...",
+      memories_item2: "Надежность и безопасность в каждой поездке",
+      memories_item3: "Широкий выбор автомобилей для любых нужд",
+      memories_item4: "Профессиональная поддержка 24/7",
+
+      download_our_app: "Скачайте наше приложение",
+      phone_description:
+        "Управляйте бронированием, отслеживайте поездки и получайте специальные предложения прямо с вашего телефона.",
+
+      reviews_from_customers: "Отзывы наших клиентов",
+      review1_text:
+        "Отличный сервис! Автомобиль был в идеальном состоянии, процесс бронирования простой и быстрый.",
+      review2_text:
+        "Рекомендую всем! Профессиональная команда и отличный выбор автомобилей.",
+
+      // Pricing Table Translations
+      economy_plan: "Эконом",
+      premium_plan: "Премиум",
+      business_plan: "Бизнес",
+      pricing_plans: "Тарифные планы",
+      choose_perfect_plan: "Выберите идеальный план для ваших нужд",
+      monthly: "Ежемесячно",
+      yearly: "Ежегодно",
+      save_20: "Сэкономьте 20%",
+      most_popular: "Самый популярный",
+      get_started: "Начать",
+      no_credit_card: "Кредитная карта не требуется",
+      money_back_guarantee: "Гарантия возврата денег в течение 30 дней",
+      need_help: "Нужна помощь в выборе плана?",
+      contact_sales: "Свяжитесь с нашей командой продаж",
+
+      // Pricing Features
+      economy_desc: "Идеально для повседневного использования",
+      premium_desc: "Лучше всего подходит для частых путешественников",
+      business_desc: "Для деловых путешественников",
+      unlimited_miles: "Неограниченные мили",
+      basic_insurance: "Базовая страховка",
+      premium_insurance: "Премиальная страховка",
+      twenty_four_seven_support: "Поддержка 24/7",
+      priority_support: "Приоритетная поддержка",
+      free_cancellation: "Бесплатная отмена",
+      luxury_vehicles: "Роскошные автомобили",
+      upgrade_discount: "Скидка 20% на апгрейд",
+      multiple_vehicles: "Несколько автомобилей",
+      dedicated_manager: "Персональный менеджер",
+      concierge_service: "Консьерж-сервис",
+      unlimited_upgrades: "Неограниченные апгрейды",
+      expense_reporting: "Отчетность по расходам",
+      per_month: "/месяц",
+      per_year: "/год",
+
+      // Testimonial Slider
+      what_customers_say: "Что говорят наши клиенты о нас",
+      testimonial4_content:
+        "Отличный опыт работы с этой компанией по аренде. Машины всегда в отличном состоянии, а персонал дружелюбный и профессиональный. Обязательно возьму напрокат снова в своей следующей поездке.",
+      family_traveler: "Семейный путешественник",
+      sarah_johnson: "Сара Джонсон",
+      business_executive: "Бизнес-исполнительный директор",
+      mike_wilson: "Майк Уилсон",
+      travel_blogger: "Блогер путешествий",
+      jane_smith: "Джейн Смит",
+      ceo_company: "Генеральный директор, Компания Inc",
+      john_doe: "Джон Доу",
+      
+      // Rental Rules
+      rental_rules_title: "Правила аренды автомобилей",
+      rental_rules_subtitle: "Пожалуйста, внимательно ознакомьтесь с нашими правилами перед арендой",
+      rule_passport_required: "Паспорт обязателен",
+      rule_passport_desc: "Для оформления аренды необходим действующий паспорт или удостоверение личности.",
+      rule_driving_experience: "Опыт вождения от 5 лет",
+      rule_driving_exp_desc: "Минимальный стаж вождения составляет 5 лет. Предъявите водительское удостоверение.",
+      rule_age_limit: "Возрастное ограничение",
+      rule_age_limit_desc: "Водителю должно быть не менее 21 года и не более 70 лет.",
+      rule_deposit_required: "Залог обязателен",
+      rule_deposit_desc: "При аренде требуется залоговая сумма. Сумма возвращается при своевременной сдаче авто в хорошем состоянии.",
+      rule_insurance_coverage: "Страхование включено",
+      rule_insurance_desc: "В стоимость аренды включено обязательное страхование гражданской ответственности.",
+      rule_territory_restrictions: "Ограничения по территории",
+      rule_territory_desc: "Автомобиль можно эксплуатировать только на территории страны. Выезд за границу запрещен.",
+      rule_fuel_policy: "Полный бак при возврате",
+      rule_fuel_desc: "Авто сдается с полным баком топлива. При необходимости дозаправки взимается дополнительная плата.",
+      rule_smoking_prohibited: "Курение запрещено",
+      rule_smoking_desc: "Курение в салоне автомобиля строго запрещено. За нарушение взимается штраф.",
+      rule_speed_limits: "Соблюдение скоростного режима",
+      rule_speed_desc: "Обязательно соблюдение правил дорожного движения и ограничений скорости.",
+      rule_damage_reporting: "Своевременное сообщение о повреждениях",
+      rule_damage_desc: "Любые повреждения автомобиля необходимо немедленно сообщить в службу поддержки.",
+      important_note: "Важно знать",
+      important_note_text: "Нарушение этих правил может привести к дополнительным сборам или прекращению договора аренды.",
+      questions_about_rules: "Остались вопросы по правилам?",
+      contact_our_team: "Свяжитесь с нашей командой",
+      
+      // Admin Panel Enhancements
+      approved_reviews: "Одобренные отзывы",
+      pending_reviews: "Ожидающие модерации",
+      rejected_reviews: "Отклоненные отзывы",
+      total_reviews_count: "Всего отзывов",
+      review_status_approved: "Одобрен",
+      review_status_pending: "Ожидает",
+      review_status_rejected: "Отклонен",
+      review_date: "Дата",
+      review_rating: "Рейтинг",
+      review_actions: "Действия",
+      approve_review: "Одобрить",
+      reject_review: "Отклонить",
+      review_approved_success: "Отзыв одобрен!",
+      review_rejected_success: "Отзыв отклонен!",
+      no_reviews_found: "Отзывы не найдены",
+      reviews_management: "Управление отзывами",
+      review_statistics: "Статистика отзывов",
+      user: "Пользователь",
+      comment: "Комментарий",
+      review_status: "Статус",
+      review_deleted_success: "Отзыв удален!",
     },
   },
   ky: {
@@ -952,6 +1374,8 @@ const resources = {
       partner_6_name: "FinWise",
       partner_6_description: "Каржы кызматтары жана консалтинг боюнча адистер.",
       become_partner: "Өнөктөш болуу",
+      locations: "Жерлер",
+      employees: "Кызматкерлер",
 
       premium_car_rentals: "Премиум автоаренда",
       discover_freedom:
@@ -1027,6 +1451,7 @@ const resources = {
 
       // Checkout success page
       order_placed_successfully: "Заказ ийгиликтүү берилди!",
+      confirm_order: "Заказды ырастоо?",
       thank_you_purchase:
         "Сатып алганыңыз үчүн алкыш. Сиздин заказыңыз ырасталды жана жакын арада иштетилет.",
       what_happens_next: "Эмир не болот?",
@@ -1050,6 +1475,16 @@ const resources = {
       dont_have_account: "Аккаунтуңуз жокпу?",
       sign_up: "Катталуу",
       failed_sign_in: "Кирүү ишке ашкан жок",
+
+      hero_title: "Премиум авто ижарасы",
+      hero_subtitle:
+        "Биздин премиум унаалар паркы менен люкс жана ыңгайлуулукту сезиңиз",
+      rent_a_car: "Унаа ижарага алуу",
+      our_services: "Биздин кызматтар",
+      car_image_alt: "Люкс унаа",
+      happy_customers: "Канааттанган кардарлар",
+      years_experience: "Жылдык тажрыйба",
+      car_brands: "Унаа бренддери",
 
       // Register page
       passwords_do_not_match: "Сырсөздөр дал келбейт",
@@ -1084,7 +1519,18 @@ const resources = {
         "Жолдо оңой жана натыйжалуу багыттоо үчүн GPS навигациясы.",
       child_safety_seats_desc:
         "Балдардын коопсуз жана ыңгайлуу саякаты үчүн балдар отургучтары.",
-      why_choose_our_services: "Эмне үчүн биздин кызматтарды тандаш керек?",
+      premium_fleet_desc:
+        "Биздин премиум автопаркыбыздагы люкс унааларга эрекше жүрүү тажрыйбасы үчүн кирүү мүмкүнчүлүгүн алыңыз.",
+      competitive_pricing_desc:
+        "Жашыруун акыларсыз жана ачык тарифтер менен бәс тартыштык баалардан ырахат алыңыз.",
+      easy_booking_desc:
+        "Машинаңызды онлайн же мобилдик колдонмобуз аркылуу бир нече чыкылдатуу менен оңой брондоңуз.",
+      customer_support_desc:
+        "Керек болгондо биздин арналган командадан 24/7 кардарларга колдоо алыңыз.",
+      one_way_rentals_desc:
+        "Ар кандай жерден алууга жана тапшырууга мүмкүндүк берүүчү ийкемдүү бир жолдуу жалдоо.",
+      long_term_deals_desc:
+        "Узак мөөнөттүү мезгилдер үчүн арзандатылган тарифтер менен атайын узак мөөнөттүү жалдоо шарттары.",
       // Footer
       address: "Дареги",
       email: "Электрондук почта",
@@ -1186,28 +1632,26 @@ const resources = {
 
       unlock_unforgettable_memories: "Унутулбас эстеликтерди ачыңыз",
       memories_description:
-        "Аликуам адиписцинг велит семпер морби. Пурус нон эу курсус порттитор триistique эт гравида. Куис нунц интердум гравида улламкорпер",
-      memories_item1:
-        "Велит семпер морби. Пурус нон эу курсус порттитор триistique эт гравида...",
-      memories_item2:
-        "Пурус нон эу курсус порттитор триistique эт гравида. Куис нунц интердум",
+        "Биздин премиум автоунаа ижарасы кызматы менен унутулбас эстеликтерди түзүңүз. Ар бир миль ыңгайлуулук жана кызыктуу окуялар менен толтурулган.",
+      memories_item1: "Ар бир мильде ыңгайлуулук жана ыңгайлуулук...",
+      memories_item2: "Ар бир саякатта ишенимдүүлүк жана коопсуздук.",
       memories_item3:
-        "Аликуам адиписцинг велит семпер морби. Пурус нон эу курсус порттитор",
-      memories_item4: "Куис нунц интердум гравида улламкорпер",
+        "Кандай гана муктаждык үчүн болбосун, автоунаалардын кеңири тандоосу.",
+      memories_item4: "24/7 кесипкөй колдоо.",
 
       download_our_app: "Биздин колдонмону жүктөп алыңыз",
       phone_description:
-        "Турпис морби эним nisi пулвинar лео дуи тэллус. Фауцибус эгэстас семпер диам рутрум дицтумст ут донец. Ниси nisi морби вэл ин вулпутатэ. Нулла нам эгет урна фусце вулпутатэ ат рисус",
+        "Брондоолоруңузду башкарыңыз, саякаттарды көзөмөлдөңүз жана телефонуңуздан түз атайын сунуштарды алыңыз. Беспроблемдуу тажрыйба үчүн мобилдик колдонмобузду жүктөп алыңыз.",
       app_store_download: "Түбөндөн жүктөп алыңыз",
       google_play_download: "МОНДО ЖҮКТӨҢҮЗ",
 
       reviews_from_customers: "Кардарлардан пикирлер",
       review1_text:
-        "Эт аликуэт нетус ат сапиен пэллентэсквэ моллис нец дигниссим маэценас. Амет эрат волутпат квисквэ одио пурус фэугиат. Ин гравида неквэ",
+        "Автоунаа ижарасы кызматы эң сонун болду! Унаа таза, жакшы тейленген жана биздин үй-бүлөлүк дем алыш үчүн керек болгон нерсе эле. Брондоо процесси оңой болду жана кызматкерлер абдан жардамчы болду.",
       review2_text:
-        "Пурус цонсэцтетур вариус квис урна пhасэллус эним маттис. Сэм тинцидунт тортор нунц эгэстас амет адиписцинг лигула",
+        "Жеткиликтүү автоунаалардын ар түрдүүлүгү жана брондоонун оңойлугу менен таасирлендим. Кардарларды колдоо outstanding болду, жана унаа биздин саякаттын баардык мезгилинде perfect иштеди.",
       review3_text:
-        "Квам неквэ одио урна эуисмод фэлис. Сит эгэстас магна ин квисквэ фамэсдапибус квис сапиен магна. Нисл нон эгет сит пэллентэсквэ триistique эт",
+        "Бул автоунаа ижарасы кызматын катуу сунуштайм. Бәс тартыштык баалар, сонун кызмат жана башынан аягына чейин оңой тажрыйба. Кайрадан колдонмокмун.",
 
       car_rental_blog: "Автоаренда блогу",
       blog_subtitle:
@@ -1316,13 +1760,55 @@ const resources = {
       subject: "Тема",
       message: "Билдирүү",
       send_message: "Билдирүү жөнөтүү",
+      passwords_do_not_match: "Сырсөздөр дал келбейт",
+      failed_create_account: "Аккаунт түзүү ишке ашкан жок",
+      cta_title: "Баштоого даярсызбы?",
+      cta_subtitle:
+        "Унааларыбызды карап чыгыңыз же биз менен байланышып, сизге ылайыктуу вариантты табыңыз.",
+      browse_cars: "Унааларды көрүү",
+      failed_sign_in: "Кирүү ишке ашкан жок",
+      submitting: "Жөнөтүү...",
+      login_to_review: "Пикир калтыруу үчүн кириңиз",
+      rating: "Рейтинг",
+      total_cars: "Жалпы авто",
+      total_reviews: "Жалпы пикирлер",
+      total_employees: "Жалпы кызматкерлер",
+      manage_cars: "Авто башкаруу",
+      add_car: "Авто кошуу",
+      delete: "Өчүрүү",
+      approve: "Бекитүү",
+      message_sent: "Билдирүү ийгиликтүү жөнөтүлдү!",
+      message_error: "Билдирүү жөнөтүүдө ката!",
+      john_doe: "Джон Доу",
+      ceo_company: "Башкы директор, Компания Inc",
+      testimonial1_content:
+        "Авто ижара кызматы өзгөчө болду! Авто таза, жакшы тейленген жана биздин үй-бүлөлүк эс алууга керек болгон нерсе эле. Брондоо процесси оңой болду жана кызматкерлер абдан жардамчы болду.",
+      jane_smith: "Жейн Смит",
+      travel_blogger: "Саякат блогери",
+      testimonial2_content:
+        "Көп саякат кылуучу катары, бул авто ижара компаниясынын ишенимдүүлүгүн жана профессионализмин баалайм. Алардын премиум автопаркы жана керемет кардар кызматы ар бир саякатты стресссиз кылат. Катуу сунуштайм!",
+      mike_wilson: "Майк Уилсон",
+      timeline_event_1_title: "Компания негизделди",
+      timeline_event_1_description:
+        "Биздин компания премиум авто ижара кызматтарын берүү көз карашы менен негизделди.",
+      timeline_event_2_title: "Биринчи жай ачылды",
+      timeline_event_2_description:
+        "Биз шаардын борборунда биринчи ижара жайыбызды ачтык.",
+      timeline_event_3_title: "Автопарк кеңейтилди",
+      timeline_event_3_description:
+        "Биздин автопаркты люкс жана спорт автоунааларды кошуп кеңейттик.",
+      timeline_event_4_title: "Эл аралык кеңейүү",
+      timeline_event_4_description:
+        "Бир нече өлкөлөрдө операцияларды баштадык.",
+      company_timeline: "Компания хронологиясы",
+      timeline_subtitle: "Биздин жолдо негизги этаптар",
     },
   },
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
+  lng: localStorage.getItem("language") || "ru",
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,

@@ -1,90 +1,165 @@
-const DB_URL = "/api"; // прокси Vite к json-server
+const DB_URL = "/api"; // vite proxy -> json-server
 
 // ---------------- USERS ----------------
 export const registerUser = async (userData) => {
-  // Проверяем, есть ли пользователь с таким email
-  const existingRes = await fetch(`${DB_URL}/users?email=${encodeURIComponent(userData.email)}`);
-  const existingUsers = await existingRes.json();
-  if (existingUsers.length > 0) throw new Error("User with this email already exists");
+  try {
+    // check existing email
+    const existingRes = await fetch(
+      `${DB_URL}/users?email=${encodeURIComponent(userData.email)}`
+    );
+    
+    if (!existingRes.ok) {
+      throw new Error(`HTTP error! status: ${existingRes.status}`);
+    }
+    
+    const existingUsersText = await existingRes.text();
+    const existingUsers = existingUsersText ? JSON.parse(existingUsersText) : [];
 
-  // Создаем нового пользователя
-  const userRes = await fetch(`${DB_URL}/users`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      ...userData,
-      id: Date.now().toString(),
-      created_at: new Date().toISOString(),
-      role: "user", // по умолчанию роль user
-    }),
-  });
-  if (!userRes.ok) throw new Error("Failed to register user");
-  const newUser = await userRes.json();
+    if (existingUsers.length > 0) {
+      throw new Error("User with this email already exists");
+    }
 
-  // Создаем профиль
-  const profileRes = await fetch(`${DB_URL}/profiles`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      id: newUser.id,
-      username: userData.username || newUser.email.split("@")[0],
-      avatar_url: "", // по желанию можно добавить URL аватара
-      created_at: new Date().toISOString(),
-    }),
-  });
-  if (!profileRes.ok) throw new Error("Failed to create profile");
+    // create user
+    const userRes = await fetch(`${DB_URL}/users`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...userData,
+        id: Date.now().toString(),
+        created_at: new Date().toISOString(),
+        role: "user",
+      }),
+    });
 
-  return newUser;
+    if (!userRes.ok) {
+      const errorText = await userRes.text();
+      throw new Error(`Failed to register user: ${userRes.status} - ${errorText}`);
+    }
+
+    const newUserText = await userRes.text();
+    const newUser = newUserText ? JSON.parse(newUserText) : null;
+
+    // create profile
+    const profileRes = await fetch(`${DB_URL}/profiles`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: newUser.id,
+        username: userData.username || newUser.email.split("@")[0],
+        avatar_url: "",
+        created_at: new Date().toISOString(),
+      }),
+    });
+
+    if (!profileRes.ok) {
+      const profileErrorText = await profileRes.text();
+      console.error('Profile creation error:', profileErrorText);
+      // Don't throw here to avoid blocking registration
+    }
+
+    return newUser;
+  } catch (error) {
+    console.error('Registration error:', error);
+    throw error;
+  }
 };
 
 export const loginUser = async (email, password) => {
-  const res = await fetch(`${DB_URL}/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
-  const data = await res.json();
-  if (!data.length) throw new Error("Invalid credentials");
-  return data[0];
+  try {
+    const res = await fetch(
+      `${DB_URL}/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+    );
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
+    const responseText = await res.text();
+    const data = responseText ? JSON.parse(responseText) : [];
+    
+    if (!data.length) {
+      throw new Error("Invalid email or password");
+    }
+
+    return data[0];
+  } catch (error) {
+    console.error('Login error:', error);
+    throw error;
+  }
 };
 
 export const fetchUsers = async () => {
-  const res = await fetch(`${DB_URL}/users`);
-  if (!res.ok) throw new Error("Failed to fetch users");
-  return res.json();
+  try {
+    const res = await fetch(`${DB_URL}/users`);
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
+    const responseText = await res.text();
+    return responseText ? JSON.parse(responseText) : [];
+  } catch (error) {
+    console.error('Fetch users error:', error);
+    throw error;
+  }
 };
 
 export const deleteUser = async (id) => {
-  const res = await fetch(`${DB_URL}/users/${id}`, { method: "DELETE" });
-  if (!res.ok) throw new Error("Failed to delete user");
-  return res.json();
+  try {
+    const res = await fetch(`${DB_URL}/users/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(`Failed to delete user: ${res.status} - ${errorText}`);
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Delete user error:', error);
+    throw error;
+  }
 };
 
 // ---------------- PROFILES ----------------
 export const getProfile = async (id) => {
-  const res = await fetch(`${DB_URL}/profiles?id=${encodeURIComponent(id)}`);
-  if (!res.ok) throw new Error("Failed to fetch profile");
-  const data = await res.json();
-  if (!Array.isArray(data) || !data.length) throw new Error("Profile not found");
-  return data[0];
+  try {
+    const res = await fetch(`${DB_URL}/profiles?id=${encodeURIComponent(id)}`);
+    
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
+    const responseText = await res.text();
+    const data = responseText ? JSON.parse(responseText) : [];
+    
+    if (!data.length) throw new Error("Profile not found");
+
+    return data[0];
+  } catch (error) {
+    console.error('Profile fetch error:', error);
+    throw error;
+  }
 };
 
 export const updateProfile = async (id, data) => {
-  // First, get the current profile to ensure it exists
-  const getRes = await fetch(`${DB_URL}/profiles?id=${encodeURIComponent(id)}`);
-  const getResData = await getRes.json();
-  
-  if (!getResData.length) {
-    throw new Error("Profile not found");
+  try {
+    const res = await fetch(`${DB_URL}/profiles/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      throw new Error(errorText || `Failed to update profile: ${res.status}`);
+    }
+
+    const responseText = await res.text();
+    return responseText ? JSON.parse(responseText) : null;
+  } catch (error) {
+    console.error('Update profile error:', error);
+    throw error;
   }
-  
-  // Update the profile using PUT method with the correct URL format
-  const res = await fetch(`${DB_URL}/profiles/${id}`, {
-    method: "PUT", // Using PUT instead of PATCH for more reliable updates
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Failed to update profile: ${res.status} - ${errorText}`);
-  }
-  
-  return res.json();
 };

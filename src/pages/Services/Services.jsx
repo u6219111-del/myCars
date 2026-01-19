@@ -10,7 +10,7 @@ function Services() {
     {
       id: 1,
       title: t('premium_fleet'),
-      description: t('car_rental_desc'),
+      description: t('premium_fleet_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -20,7 +20,7 @@ function Services() {
     {
       id: 2,
       title: t('competitive_pricing'),
-      description: t('chauffeur_service_desc'),
+      description: t('competitive_pricing_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -30,7 +30,7 @@ function Services() {
     {
       id: 3,
       title: t('easy_booking'),
-      description: t('long_term_leasing_desc'),
+      description: t('easy_booking_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -40,7 +40,7 @@ function Services() {
     {
       id: 4,
       title: t('customer_support'),
-      description: t('roadside_assistance_desc'),
+      description: t('customer_support_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -50,7 +50,7 @@ function Services() {
     {
       id: 5,
       title: t('one_way_rentals'),
-      description: t('gps_navigation_desc'),
+      description: t('one_way_rentals_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -61,7 +61,7 @@ function Services() {
     {
       id: 6,
       title: t('long_term_deals'),
-      description: t('child_safety_seats_desc'),
+      description: t('long_term_deals_desc'),
       icon: (
         <svg className="service-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

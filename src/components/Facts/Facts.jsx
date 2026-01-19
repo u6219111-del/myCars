@@ -35,7 +35,7 @@ function Facts() {
 
         <div className="stats-grid">
           {stats.map((stat, index) => (
-            <div key={index} className="stat-card">
+            <div key={index} className="stat-cardd">
               <div className="icon-wrapper">
                 <img src={stat.img} alt={stat.label} />
               </div>

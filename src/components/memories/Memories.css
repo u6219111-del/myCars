@@ -4,15 +4,11 @@
   gap: 48px;
   padding: 60px 20px;
   max-width: 1152px;
-  margin: 60px auto 220px auto;
+  margin: 60px auto 50px auto;
   flex-wrap: wrap;
   align-items: flex-start;
   font-family: 'Inter', sans-serif;
-  background: var(--card-bg);
   border-radius: 20px;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-  border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
 }
@@ -46,10 +42,9 @@
 
 .memories-item {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 17px;
   padding: 12px;
-  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: var(--card-shadow);
   transition: var(--transition);

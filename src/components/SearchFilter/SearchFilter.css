@@ -8,6 +8,7 @@
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
+  background: var(--card-bg);
 }
 
 .search-filter-header {
@@ -30,13 +31,13 @@
 }
 
 .search-filter-form {
-
   padding: 2rem;
   border-radius: 15px;
   margin-bottom: 2rem;
-  box-shadow: var(--card-shadow);
-  border: 1px solid var(--border-color);
+  box-shadow: none;
+  border: 1px solid rgba(148, 163, 184, 0.25);
   transition: var(--transition);
+  background: var(--glass-bg);
 }
 
 .filter-row {

@@ -9,37 +9,35 @@ function Partners() {
     {
       id: 1,
       name: t('partner_1_name'),
-      logo: '/src/assets/images/partner-1.png',
+    
       description: t('partner_1_description')
     },
     {
       id: 2,
       name: t('partner_2_name'),
-      logo: '/src/assets/images/partner-2.png',
+
       description: t('partner_2_description')
     },
     {
       id: 3,
       name: t('partner_3_name'),
-      logo: '/src/assets/images/partner-3.png',
+
       description: t('partner_3_description')
     },
     {
       id: 4,
       name: t('partner_4_name'),
-      logo: '/src/assets/images/partner-4.png',
+
       description: t('partner_4_description')
     },
     {
       id: 5,
       name: t('partner_5_name'),
-      logo: '/src/assets/svg/partner-5.png',
       description: t('partner_5_description')
     },
     {
       id: 6,
       name: t('partner_6_name'),
-      logo: '/src/assets/images/partner-6.png',
       description: t('partner_6_description')
     }
   ], [i18n.language]); // ← КЛЮЧЕВО
@@ -53,14 +51,6 @@ function Partners() {
         <div className="partners-grid">
           {partners.map(partner => (
             <div key={partner.id} className="partner-card">
-              <div className="partner-logo">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="partner-logo-image"
-                />
-              </div>
-
               <div className="partner-info">
                 <h3 className="partner-name">{partner.name}</h3>
                 <p className="partner-description">{partner.description}</p>

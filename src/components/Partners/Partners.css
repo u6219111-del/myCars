@@ -61,7 +61,7 @@
 
 .partner-card {
   border-radius: 16px;
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
   transition: var(--transition);
   position: relative;
@@ -79,7 +79,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c);
+  background: linear-gradient(90deg, #3498db, #2e5bcc, #12e0f3, #bf3ce7);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;

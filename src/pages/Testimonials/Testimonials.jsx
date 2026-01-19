@@ -1,72 +1,155 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useAuth } from "../../contexts/AuthContext";
+import { fetchReviews, addReview } from "../../api/reviews";
+import { getProfile } from "../../api/mockUsers";
 import "./Testimonials.css";
-import { useTranslation } from 'react-i18next';
 
 function Testimonials() {
   const { t } = useTranslation();
-  
-  const testimonials = [
-    {
-      id: 1,
-      name: t('testimonial1_name'),
-      company: t('testimonial1_company'),
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      rating: 5,
-      text: t('testimonial1_text')
-    },
-    {
-      id: 2,
-      name: t('testimonial2_name'),
-      company: t('testimonial2_company'),
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      rating: 5,
-      text: t('testimonial2_text')
-    },
-    {
-      id: 3,
-      name: t('testimonial3_name'),
-      company: t('testimonial3_company'),
-      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      rating: 5,
-      text: t('testimonial3_text')
+  const { user } = useAuth();
+  const [reviews, setReviews] = useState([]);
+  const [newReview, setNewReview] = useState({ text: "", rating: 5 });
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    loadReviews();
+  }, []);
+
+  const loadReviews = async () => {
+    try {
+      const data = await fetchReviews();
+      const approvedReviews = data.filter((review) => review.approved);
+      setReviews(approvedReviews);
+    } catch (error) {
+      console.error("Failed to load reviews:", error);
+      setReviews([]);
     }
-  ];
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewReview((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleRatingChange = (rating) => {
+    setNewReview((prev) => ({ ...prev, rating }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!user || !newReview.text.trim()) return;
+
+    setLoading(true);
+    try {
+      let profile;
+      let userName = user.email?.split("@")[0] || "Anonymous";
+      let avatarUrl = "";
+
+      try {
+        profile = await getProfile(user.id);
+        userName = profile.username || user.username || userName;
+        avatarUrl = profile.avatar_url || "";
+      } catch (profileError) {
+        console.warn("Profile not found, using defaults:", profileError);
+        userName = user.username || userName;
+      }
+
+      const reviewData = {
+        user_id: user.id,
+        user_name: userName,
+        comment: newReview.text.trim(),
+        rating: newReview.rating,
+        avatar_url: avatarUrl,
+        approved: true,
+        created_at: new Date().toISOString(),
+      };
+
+      await addReview(reviewData);
+      setNewReview({ text: "", rating: 5 });
+      await loadReviews();
+      alert(t("review_submitted_success", "Спасибо за ваш отзыв! Он был успешно добавлен."));
+    } catch (error) {
+      console.error("Failed to add review:", error);
+      alert(t("review_submit_error", "Произошла ошибка при добавлении отзыва."));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderAvatar = (review) =>
+    review.avatar_url ? (
+      <img src={review.avatar_url} alt={review.user_name} className="testimonial-avatar" />
+    ) : (
+      <div className="avatar-placeholder">{review.user_name.charAt(0).toUpperCase()}</div>
+    );
+
+  const renderStars = (rating, onClick) =>
+    [1, 2, 3, 4, 5].map((star) => (
+      <span
+        key={star}
+        className={`star ${star <= rating ? "filled" : ""}`}
+        onClick={() => onClick?.(star)}
+      >
+        ★
+      </span>
+    ));
 
   return (
     <div className="testimonials-container">
       <div className="testimonials-wrapper">
         <div className="testimonials-header">
-          <h1>{t('customer_testimonials')}</h1>
-          <p>{t('testimonials_subtitle')}</p>
+          <h1>{t("customer_testimonials")}</h1>
+          <p>{t("testimonials_subtitle")}</p>
         </div>
 
         <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
+          {reviews.map((review) => (
+            <div key={review.id} className="testimonial-card">
               <div className="testimonial-top">
-                <img src={testimonial.avatar} alt={testimonial.name} className="testimonial-avatar" />
+                <div className="testimonial-avatar-wrapper">{renderAvatar(review)}</div>
                 <div className="testimonial-info">
-                  <h3>{testimonial.name}</h3>
-                  <p>{testimonial.company}</p>
+                  <h3 title={review.user_name}>{review.user_name}</h3>
+                  <p>Клиент</p>
                 </div>
               </div>
-              <div className="testimonial-rating">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className={`star ${i < testimonial.rating ? "filled" : ""}`}
-                  >★</span>
-                ))}
-              </div>
-              <p className="testimonial-text">"{testimonial.text}"</p>
+              <div className="testimonial-rating">{renderStars(review.rating)}</div>
+              <p className="testimonial-text">"{review.comment}"</p>
             </div>
           ))}
         </div>
 
         <div className="testimonials-cta">
-          <h2>{t('ready_experience_excellence')}</h2>
-          <p>{t('join_satisfied_customers')}</p>
-          <button>{t('book_ride_today')}</button>
+          {user ? (
+            <>
+              <h2>{t("share_your_experience", "Поделитесь своим опытом")}</h2>
+              <p>{t("leave_testimonial", "Оставьте отзыв о наших услугах")}</p>
+
+              <form onSubmit={handleSubmit} className="testimonial-form">
+                <div className="form-group">
+                  <textarea
+                    name="text"
+                    value={newReview.text}
+                    onChange={handleInputChange}
+                    placeholder={t("your_testimonial", "Ваш отзыв")}
+                    rows="4"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>{t("rating", "Рейтинг")}:</label>
+                  <div className="rating-input">{renderStars(newReview.rating, handleRatingChange)}</div>
+                </div>
+
+                <button type="submit" disabled={loading}>
+                  {loading ? t("submitting", "Отправка...") : t("submit_testimonial", "Отправить отзыв")}
+                </button>
+              </form>
+            </>
+          ) : (
+            <p>{t("login_to_review", "Пожалуйста, войдите в систему, чтобы оставить отзыв.")}</p>
+          )}
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 .cart-container {
   min-height: 100vh;
-  background: var(--bg-color);
   padding: 2rem 0;
   transition: var(--transition);
 }
@@ -9,10 +8,9 @@
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 1rem;
-  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
-  transition: var(--transition);
+  padding: 20px 20px ;
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
@@ -113,8 +111,6 @@
 .cart-items-container {
   box-shadow: var(--card-shadow);
   border-radius: 12px;
-  overflow: hidden;
-  background: var(--card-bg);
   transition: var(--transition);
   border: 1px solid var(--border-color);
   position: relative;
@@ -212,8 +208,7 @@
   border-radius: 12px;
   padding: 0.25rem 0.5rem;
   outline: none;
-  background: var(--card-bg);
-  color: var(--text-color);
+  color: rgb(24, 98, 176);
   transition: var(--transition);
   box-shadow: var(--card-shadow);
 }

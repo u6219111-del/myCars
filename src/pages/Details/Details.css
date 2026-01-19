@@ -1,26 +1,28 @@
 
 .details-container {
-  padding: 50px 20px;
-
+  padding: 56px 20px 72px;
   font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .details-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 40px;
   animation: fadeInUp 0.6s ease forwards;
 }
 
 
 .details-image {
-  width: 600px;
-  height: 400px;
+  width: 580px;
+  height: 380px;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
 }
 .details-image:hover {
@@ -56,29 +58,27 @@
 
 
 .details-info {
-  max-width: 600px;
+  max-width: 520px;
 }
 .details-info h1 {
-  font-size: 50px;
+  font-size: 2.4rem;
   font-weight: bold;
-
 }
 .details-meta {
   display: flex;
   gap: 15px;
-  font-size: 18px;
-
+  font-size: 0.95rem;
+  color: var(--text-muted);
   margin-top: 10px;
 }
 .details-desc h3 {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: 600;
-
   margin-top: 30px;
 }
 .details-desc p {
-  font-size: 16px;
-
+  font-size: 0.95rem;
+  color: var(--text-color);
   margin-top: 10px;
 }
 
@@ -90,13 +90,12 @@
   margin-top: 30px;
 }
 .details-price span:first-child {
-  font-size: 28px;
+  font-size: 1.6rem;
   font-weight: bold;
-
 }
 .details-price span:last-child {
-  font-size: 16px;
-
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 
@@ -107,12 +106,12 @@
   flex-wrap: wrap;
 }
 .details-specs > div {
-  width: 180px;
-
-  border-radius: 12px;
+  width: 160px;
+  border-radius: 14px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(15,23,42,0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
     flex-direction: column;
@@ -121,7 +120,7 @@
 }
 .details-specs > div:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.12);
 }
 .details-specs img {
   width: 24px;
@@ -131,7 +130,7 @@
 }
 .details-specs p {
   font-weight: 600;
-
+  font-size: 0.9rem;
 }
 
 
@@ -149,15 +148,17 @@
   transition: all 0.3s ease;
 }
 .details-actions button:first-child {
-  background-color: #7c3aed;
-  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #facc15);
+  color: #111827;
+  box-shadow: 0 18px 40px rgba(249, 115, 22, 0.2);
 }
 .details-actions button:first-child:hover {
-  background-color: #6d28d9;
+  transform: translateY(-2px);
+  box-shadow: 0 22px 50px rgba(249, 115, 22, 0.3);
 }
 .details-actions button:last-child {
-  background-color: #e5e7eb;
-  color: #374151;
+  background-color: var(--neutral-100);
+  color: var(--text-color);
 }
 .details-actions button:last-child.active {
   background-color: #fee2e2;
@@ -178,9 +179,8 @@
   margin-bottom: 30px;
 }
 .other-cars-header h2 {
-  font-size: 36px;
+  font-size: 1.8rem;
   font-weight: bold;
-
 }
 .other-cars-header a {
   color: #6b7280;
@@ -198,16 +198,17 @@
 }
 .other-car-card {
   width: 380px;
-
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 0.5s ease forwards;
 }
 .other-car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: var(--card-shadow-hover);
 }
 .card-image {
   position: relative;
@@ -224,13 +225,11 @@
   padding: 15px;
 }
 .card-info h3 {
-  font-size: 20px;
+  font-size: 1.05rem;
   font-weight: 600;
-
 }
 .card-info span {
   display: block;
-
   margin-top: 5px;
 }
 .card-specs {
@@ -253,11 +252,11 @@
   cursor: pointer;
 }
 .card-actions button:first-child {
-  background-color: #7c3aed;
-  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: var(--text-light);
 }
 .card-actions button:first-child:hover {
-  background-color: #6d28d9;
+  filter: brightness(1.02);
 }
 .card-actions button:last-child {
   background-color: #e5e7eb;

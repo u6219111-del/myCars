@@ -2,17 +2,80 @@ import React from "react";
 import { useCart } from "../../contexts/CartContext";
 import { Link, useNavigate } from "react-router-dom";
 import "./Cart.css";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function Cart() {
-  const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } =
+    useCart();
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const handleCheckout = () => {
-    alert(`${t('order_placed_successfully')} ${t('total')}: $${getCartTotal().toFixed(2)}`);
-    clearCart();
-    navigate("/checkout-success"); 
+  const handleCheckout = async () => {
+    const total = getCartTotal().toFixed(2);
+    const confirmed = confirm(`${t("confirm_order")} ${t("total")}: $${total}`);
+
+    if (!confirmed) return;
+
+    const itemsSummary =
+      cartItems.length === 0
+        ? "Корзина пуста"
+        : cartItems
+            .map(
+              (item) =>
+                `${item.name} — x${item.quantity} = $${(
+                  item.price * item.quantity
+                ).toFixed(2)}`
+            )
+            .join("\n");
+
+    const message = `Новый заказ\n\nСумма: $${total}\nПозиций: ${
+      cartItems.length
+    }\n\nСостав заказа:\n${itemsSummary}`;
+
+    
+    const token = import.meta.env.VITE_TELEGRAM_BOT_TOKEN
+    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID
+
+    if (!token || !chatId) {
+      alert(
+        "Telegram не настроен: не указаны VITE_TELEGRAM_BOT_TOKEN или VITE_TELEGRAM_CHAT_ID"
+      );
+     
+      clearCart();
+      navigate("/checkout-success");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${token}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: message,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!data.ok) {
+        console.error("Telegram error:", data);
+        alert("Ошибка отправки в Telegram: " + data.description);
+      } else {
+        console.log("Telegram message sent successfully:", data);
+      }
+    } catch (error) {
+      console.error("Ошибка отправки в Telegram:", error);
+      alert("Ошибка сети при отправке в Telegram");
+    } finally {
+      clearCart();
+      navigate("/checkout-success");
+    }
   };
 
   return (

@@ -39,7 +39,8 @@
 }
 
 .review-card {
-  background: var(--card-gradient);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 25px;
   box-shadow: var(--card-shadow);
   padding: 30px 25px;
@@ -48,10 +49,15 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.review-card.animate {
   animation: fadeInUp 0.7s ease forwards;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
 }
+
 .review-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);

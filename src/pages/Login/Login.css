@@ -4,34 +4,11 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   position: relative;
   overflow: hidden;
 }
 
-.login-container::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
-  top: -300px;
-  left: -300px;
-  z-index: 0;
-}
 
-.login-container::after {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
-  bottom: -250px;
-  right: -250px;
-  z-index: 0;
-}
 
 .login-form {
   position: relative;
@@ -60,6 +37,11 @@
 
 .input-group {
   margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
 }
 
 .input-group input {
@@ -71,6 +53,7 @@
   transition: all 0.3s ease;
   background: #f9fafb;
   outline: none;
+ 
 }
 
 .input-group input:focus {

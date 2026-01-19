@@ -74,11 +74,19 @@ function Vehicles() {
               <div className="vehicle-specs">
                 <div>
                   <span>
+                    <img src="/src/assets/svg/korobka.svg" alt="" className="spec-icon" />
                     {car.automat ? t("automatic") : t("manual")}
                   </span>
                 </div>
                 <div>
                   <span>
+                    <img src="/src/assets/svg/gaz.svg" alt="" className="spec-icon" />
+                    {car.engine_volume}
+                  </span>
+                </div>
+                <div>
+                  <span>
+                    <img src="/src/assets/svg/snow.svg" alt="" className="spec-icon" />
                     {car.air_conditioner
                       ? t("air_conditioner")
                       : t("no_ac")}

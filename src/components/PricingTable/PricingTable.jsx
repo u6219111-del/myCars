@@ -16,7 +16,7 @@ const PricingTable = () => {
       features: [
         t('unlimited_miles', 'Unlimited Miles'),
         t('basic_insurance', 'Basic Insurance'),
-        t('24_7_support', '24/7 Support'),
+        t('twenty_four_seven_support', '24/7 Support'),
         t('free_cancellation', 'Free Cancellation')
       ],
       popular: false
@@ -99,12 +99,6 @@ const PricingTable = () => {
               ))}
             </ul>
             
-            <div className="plan-action">
-              <button className={`btn ${plan.popular ? 'btn-primary' : 'btn-secondary'}`}>
-                {t('get_started', 'Get Started')}
-              </button>
-              <p className="plan-note">{t('no_credit_card', 'No credit card required')}</p>
-            </div>
           </div>
         ))}
       </div>

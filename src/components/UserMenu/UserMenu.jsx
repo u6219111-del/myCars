@@ -29,7 +29,7 @@ function UserMenu() {
       {open && (
         <div className="user-dropdown">
           <Link to="/my-account" className="user-dropdown-item">
-            My Account
+            Profile
           </Link>
           <button onClick={handleLogout} className="user-dropdown-item">
             Logout
